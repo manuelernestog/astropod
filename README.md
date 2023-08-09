@@ -1,2 +1,2 @@
-# astropod
-Host your podcast for free.
+# Astropod
+Host your podcast for free on github pages.
