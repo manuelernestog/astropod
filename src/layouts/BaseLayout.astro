@@ -1,0 +1,26 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import astropodConf from "../../astropod.conf.cjs";
+
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+
+const { image, title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme={astropodConf.theme}>
+  <head>
+    <BaseHead title={title} description={description} image={image} />
+  </head>
+  <body class="bg-base-200 min-h-screen">
+    <div class="container mx-auto lg:max-w-[960px]">
+      <div class="md:flex md:justify-center">
+        <main class="-mt-5">
+          <slot />
+        </main>
+      </div>
+      <Footer />
+    </div>
+  </body>
+</html>
