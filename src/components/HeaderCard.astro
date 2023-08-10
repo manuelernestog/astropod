@@ -9,29 +9,32 @@ import SpotifyIcon from "./icons/spotifyIcon.astro";
 import ApplePodcastIcon from "./icons/applePodcastIcon.astro";
 ---
 
-<div class="card min-w-full bg-base-100 shadow-md pb-3">
-  <div class="aspect-[3/1] mt-5 min-w-[720px]">
+<div class="card min-w-full bg-base-100 shadow-md md:pb-3">
+  <div class="aspect-[3/1] mt-5 md:min-w-[720px]">
     <div class="relative inline-block">
       <img src={astropodConf.banner} alt="imgen" />
       <div
         class="absolute top-0 left-0 items-center justify-center w-full h-full bg-gradient-to-t from-gray-900 to-50% to-transparent"
       >
-        <div class="flex flex-col absolute bottom-0 left-52 px-3">
-          <p class="mb-1 text-sm font-medium text-white">{subtitle}</p>
-          <h1 class="mb-3 text-4xl font-black text-white">{title}</h1>
+        <div class="flex flex-col absolute bottom-0 left-28 md:left-52 px-3">
+          <p class="mb-1 text-xs font-medium text-white">{subtitle}</p>
+          <h1 class="mb-3 text-lg md:text-4xl font-black text-white">{title}</h1>
         </div>
       </div>
     </div>
-    <img class="-mt-28 border-4 z-10 relative border-base-100 rounded-lg mx-11 w-40 h-40" src={astropodConf.cover} />
+    <img
+      class="-mt-24 mx-6 md:-mt-28 border-4 z-10 relative border-base-100 rounded-lg md:mx-11 w-20 h-20 md:h-40 md:w-40"
+      src={astropodConf.cover}
+    />
   </div>
 
-  <div class="flex -mt-12 px-4 pl-52">
+  <div class="flex md:-mt-12 px-4 md:pl-52">
     <a href="/" class="btn btn-ghost m-1 justify-self-start"> Home</a>
     <a href="about" class="btn btn-ghost m-1 justify-self-end"> About</a>
 
     <div class="grow"></div>
 
-    <div class="dropdown dropdown-hover place-self-end">
+    <div class="dropdown dropdown-hover dropdown-end">
       <label tabindex="0" class="btn btn-ghost m-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +53,7 @@ import ApplePodcastIcon from "./icons/applePodcastIcon.astro";
           <path d="M15 13m0 2a2 2 0 0 1 2 -2h1a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-1a2 2 0 0 1 -2 -2z"></path>
           <path d="M4 15v-3a8 8 0 0 1 16 0v3"></path>
         </svg>
-        Listen on
+        <span class="hidden md:inline-block">Listen on</span>
       </label>
       <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
         <li><a><GooglePodcastIcon />Google Podcast</a></li>
@@ -59,7 +62,7 @@ import ApplePodcastIcon from "./icons/applePodcastIcon.astro";
       </ul>
     </div>
 
-    <div class="dropdown dropdown-hover">
+    <div class="dropdown dropdown-hover dropdown-end">
       <label tabindex="0" class="btn btn-ghost m-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +81,7 @@ import ApplePodcastIcon from "./icons/applePodcastIcon.astro";
           <path d="M11 13l9 -9"></path>
           <path d="M15 4h5v5"></path>
         </svg>
-        Follow us
+        <span class="hidden md:inline-block">Follow us</span>
       </label>
       <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
         <li><a> <TwitterIcon /> Twitter</a></li>
