@@ -1,7 +1,6 @@
 ---
 const { title, cover, desc, url, audioUrl, id, pubDate, duration } = Astro.props;
 
-import { Image } from "@astrojs/image/components";
 import astropodConf from "../../astropod.conf.cjs";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
@@ -16,17 +15,20 @@ const displayDate = dayjs(pubDate).format("ll");
 
 <div class="podcast-card">
   <div class="hero-content flex-row">
-    <img src={cover_url} alt={title} class="shadow-lg rounded-md w-20 h-20 md:w-24 md:h-24">
-    <!-- <Image src={cover_url} aspectRatio="1:1" width={96} format="webp" alt={title} class="shadow-lg rounded-md w-18 h-18 md:w-24 md:h-24" /> -->
+    <a href={url} class="min-w-fit">
+      <img src={cover_url} alt={title} class="shadow-lg rounded-md w-20 h-20 md:w-24 md:h-24" />
+    </a>
     <div class="grow w-full">
-      <h2 class="text-xl font-semibold">
-        {title}
-      </h2>
-      <p class="text-sm font-medium opacity-60">
-        {duration && duration + " • "}
-        {displayDate}
-      </p>
-      <p class="py-1 text-xs md:text-sm line-clamp-2">{desc}</p>
+      <a href={url}>
+        <h2 class="text-xl font-semibold truncate">
+          {title}
+        </h2>
+        <p class="text-sm font-medium opacity-60">
+          {duration && duration + " • "}
+          {displayDate}
+        </p>
+        <p class="my-1 text-xs md:text-sm line-clamp-2">{desc}</p>
+      </a>
     </div>
     <label class="btn btn-circle md:mx-2 swap">
       <input type="checkbox" class="card-pay-buttons" id={id} data-audio-url={audioUrl} />
@@ -42,7 +44,7 @@ const displayDate = dayjs(pubDate).format("ll");
 </div>
 
 <style>
-  .podcast-card:last-child hr{
+  .podcast-card:last-child hr {
     display: none;
   }
 </style>
