@@ -4,7 +4,7 @@ import HorizontalCard from "../../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths({ paginate }) {
-  const posts = await getCollection("blog");
+  const posts = await getCollection("podcast");
   posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
   return paginate(posts, { pageSize: 10 });
 }

@@ -4,18 +4,18 @@ import { BlogSchema } from '../../content/config';
 import PostLayout from '../../layouts/PodcastLayout.astro';
 
 export async function getStaticPaths() {
-    const postEntries = await getCollection('blog');
+    const postEntries = await getCollection('podcast');
     return postEntries.map(entry => ( { 
         params: { slug: entry.slug }, props: { entry },
     } ));
 }
 
 interface Props {
-    entry: CollectionEntry<"blog">;
+    entry: CollectionEntry<"podcast">;
 }
 
 const { entry } = Astro.props;
-const post : BlogSchema = entry.data;
+const post : PodcastSchema = entry.data;
 const { Content } = await entry.render();
 ---
 

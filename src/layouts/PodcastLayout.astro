@@ -1,34 +1,23 @@
 ---
-import { BlogSchema } from "../content/config";
+import { PodcastSchema } from "../content/config";
 import BaseLayout from "./BaseLayout.astro";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
+import HeaderCard from "../components/HeaderCard.astro";
 
-export interface Props extends BlogSchema {}
+export interface Props extends PodcastSchema {}
 
-const { title, description, pubDate, updatedDate, heroImage, badge } =
-  Astro.props;
+const { title, description, pubDate, updatedDate, cover, badge } = Astro.props;
 dayjs.extend(localizedFormat);
 const displayDate = dayjs(pubDate).format("ll");
-import { Image } from "@astrojs/image/components";
+
 ---
 
-<BaseLayout title={title} description={description} image={heroImage}>
+<BaseLayout title={title} description={description} image={cover}>
+  <HeaderCard title={title} description={description} image={cover} />
+
   <main class="md:flex md:justify-center">
     <article class="prose prose-lg max-w-[750px] prose-img:mx-auto">
-      {
-        heroImage && (
-        <Image
-            aspectRatio={"16:9"}
-            width={750}
-            height={422}
-            format="webp"
-            src={heroImage}
-            alt={title}
-            class="w-full mb-6"
-          />
-        )
-      }
       <h1 class="title my-2 text-4xl font-bold">{title}</h1>
       {pubDate && <time>{displayDate}</time>}
       <br />
