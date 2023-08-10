@@ -1,6 +1,9 @@
 ---
 const { title, subtitle } = Astro.props;
 import astropodConf from "../../astropod.conf.cjs";
+import TwitterIcon from "./icons/twitterIcon.astro";
+import YoutubeIcon from "./icons/youtubeIcon.astro";
+import TelegramIcon from "./icons/telegramIcon.astro";
 ---
 
 <div class="card min-w-full bg-base-100 shadow-md pb-3">
@@ -17,10 +20,7 @@ import astropodConf from "../../astropod.conf.cjs";
       </div>
     </div>
 
-    <img
-      class="-mt-28 border-4 z-10 relative border-base-100 rounded-lg mx-11 w-40 h-40"
-      src={astropodConf.cover}
-    />
+    <img class="-mt-28 border-4 z-10 relative border-base-100 rounded-lg mx-11 w-40 h-40" src={astropodConf.cover} />
   </div>
 
   <div class="flex -mt-12 px-4 pl-52">
@@ -78,8 +78,9 @@ import astropodConf from "../../astropod.conf.cjs";
         Follow us
       </label>
       <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-        <li><a>Twitter</a></li>
-        <li><a>Youtube</a></li>
+        <li><a> <TwitterIcon /> Twitter</a></li>
+        <li><a> <YoutubeIcon />Youtube</a></li>
+        <li><a> <TelegramIcon />Telegram</a></li>
       </ul>
     </div>
 
