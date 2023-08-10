@@ -8,7 +8,7 @@ import AudioMutedIcon from "./icons/audioMutedIcon.astro";
 
 <div
   id="audio-player-container"
-  class="w-full bottom-0 sticky bg-base-100 flex px-5 h-16 items-center transition-opacity invisible opacity-0 duration-500"
+  class="w-full bottom-0 sticky bg-base-100 px-5 h-16 items-center transition-opacity hidden opacity-0 duration-500"
 >
   <audio src="" preload="metadata"></audio>
   <label class="swap">
@@ -124,7 +124,9 @@ import AudioMutedIcon from "./icons/audioMutedIcon.astro";
   playButtons.forEach(function (btn) {
     btn.addEventListener("click", () => {
       if (new URL(audio.src).pathname != btn.dataset.audioUrl) {
-        musicPlayer?.classList.remove("invisible", "opacity-0");
+        musicPlayer?.classList.remove("hidden");
+        musicPlayer?.classList.add("flex");
+        setTimeout(() => musicPlayer?.classList.remove("opacity-0"), 100);
         audio.src = btn.dataset.audioUrl;
         audioDownloadLink.href = btn.dataset.audioUrl;
         disableOthersPlayButtons(btn.id, playButtons);
