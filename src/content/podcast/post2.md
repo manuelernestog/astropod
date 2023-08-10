@@ -1,7 +1,7 @@
 ---
 title: "Demo Post 2"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-audioUrl: "asd"
+audioUrl: "/audio/audio1.mp3"
 cover: ""
 pubDate: "Sep 11 2022"
 heroImage: "/post_img.webp"

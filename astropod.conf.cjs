@@ -6,7 +6,7 @@ export default {
   banner: "/banner.webp",
   explicit: false,
   email: "",
-  theme: "winter",
+  theme: "light",
   social: {
     facebook: "",
     twitter: "",
