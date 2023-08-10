@@ -16,7 +16,8 @@ const displayDate = dayjs(pubDate).format("ll");
 
 <div class="">
   <div class="hero-content flex-row">
-    <Image src={cover_url} aspectRatio="1:1" width={100} format="webp" alt={title} class="shadow-lg rounded-md" />
+    <img src={cover_url} alt={title} class="shadow-lg rounded-md w-20 h-20 md:w-24 md:h-24">
+    <!-- <Image src={cover_url} aspectRatio="1:1" width={96} format="webp" alt={title} class="shadow-lg rounded-md w-18 h-18 md:w-24 md:h-24" /> -->
     <div class="grow w-full">
       <h2 class="text-xl font-semibold">
         {title}
@@ -25,9 +26,9 @@ const displayDate = dayjs(pubDate).format("ll");
         {duration && duration + " • "}
         {displayDate}
       </p>
-      <p class="py-1 text-1xl">{desc}</p>
+      <p class="py-1 text-xs md:text-sm line-clamp-2">{desc}</p>
     </div>
-    <label class="btn btn-circle mx-2 swap">
+    <label class="btn btn-circle md:mx-2 swap">
       <input type="checkbox" class="card-pay-buttons" id={id} data-audio-url={audioUrl} />
       <div class="swap-off">
         <PlayIcon />
