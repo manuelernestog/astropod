@@ -5,6 +5,7 @@ import { getCollection } from "astro:content";
 import astropodConfig from "./../../astropod.conf.cjs";
 import HeaderCard from "../components/HeaderCard.astro";
 import AudioPlayer from "../components/audioPlayer.astro";
+import HorizontalCardsScript from "../components/HorizontalCardsScript.astro";
 
 const posts = (await getCollection("podcast")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
@@ -16,26 +17,20 @@ const last_posts = posts.slice(0, 3);
 
   <div class="card min-w-full bg-base-100 shadow-md p-3 pb-3 mt-12">
     {
-      last_posts.map((post) => (
+      last_posts.map((post, index) => (
         <HorizontalCard
           title={post.data.title}
           img={post.data.cover}
           desc={post.data.description}
           url={"/blog/" + post.slug}
+          audioUrl={post.data.audioUrl}
           target="_self"
           badge={post.data.badge}
+          id={"card-" + index}
         />
       ))
     }
   </div>
 </BaseLayout>
-
-<!-- <div class="sticky w-full bottom-0 bg-base-100">
-  <div>
-    <audio id="Test_Audio" controls class="w-full bg-base-200">
-      <source src="/audio/musica.mp3" />
-    </audio>
-  </div>
-</div> -->
 
 <AudioPlayer />

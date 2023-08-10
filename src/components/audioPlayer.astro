@@ -7,7 +7,7 @@ import AudioMutedIcon from "./icons/audioMutedIcon.astro";
 ---
 
 <div id="audio-player-container" class="w-full bottom-0 sticky bg-base-100 flex px-5 h-16 items-center">
-  <audio src="/audio/audio2.m4a" preload="metadata"></audio>
+  <audio src="" preload="metadata"></audio>
   <label class="swap">
     <input type="checkbox" id="play-icon" />
     <div id="play-icon-svg" class="swap-off">
@@ -19,7 +19,7 @@ import AudioMutedIcon from "./icons/audioMutedIcon.astro";
   </label>
   <span id="current-time" class="ml-5 mr-2">0:00</span>/
   <span id="duration" class="ml-2">0:00</span>
-  <input id="seek-slider" type="range" min="0" max="100" value="0" class="range range-xs mx-5" />
+  <input id="seek-slider" type="range" min="0" max="0" value="0" class="range range-xs mx-5" />
   <label class="ml-5 swap">
     <input id="mute-icon" type="checkbox" />
     <div class="swap-off">
@@ -64,9 +64,6 @@ import AudioMutedIcon from "./icons/audioMutedIcon.astro";
   const playIconContainer = document.getElementById("play-icon");
   const muteIconContainer = document.getElementById("mute-icon");
 
-  let playState = "play";
-  let isMuted = false;
-
   const audio = document.querySelector("audio");
   const durationContainer = document.getElementById("duration");
   const currentTimeContainer = document.getElementById("current-time");
@@ -95,23 +92,16 @@ import AudioMutedIcon from "./icons/audioMutedIcon.astro";
   }
 
   muteIconContainer.addEventListener("click", () => {
-    isMuted = !isMuted;
-    audio.muted = isMuted;
+    audio.muted = muteIconContainer.checked;
   });
 
-  playIconContainer.addEventListener("click", () => {
-    if (playState === "play") {
+  playIconContainer.onchange = function () {
+    if (playIconContainer.checked) {
       audio.play();
-      // pauseIcon.classList.remove("hidden");
-      // playIcon.classList.add("hidden");
-      playState = "pause";
     } else {
       audio.pause();
-      // playIcon.classList.remove("hidden");
-      // pauseIcon.classList.add("hidden");
-      playState = "play";
     }
-  });
+  };
 
   seekSlider.addEventListener("input", () => {
     currentTimeContainer.textContent = calculateTime(seekSlider.value);
@@ -125,4 +115,27 @@ import AudioMutedIcon from "./icons/audioMutedIcon.astro";
     seekSlider.value = Math.floor(audio.currentTime);
     currentTimeContainer.textContent = calculateTime(seekSlider.value);
   });
+
+  const playButtons = document.querySelectorAll(".card-pay-buttons");
+
+  playButtons.forEach(function (btn) {
+    btn.addEventListener("click", () => {
+      if (new URL(audio.src).pathname != btn.dataset.audioUrl) {
+        audio.src = btn.dataset.audioUrl;
+        disableOthersPlayButtons(btn.id, playButtons);
+        playIconContainer.checked = true;
+        audio.play();
+      } else {
+        playIconContainer?.click();
+      }
+    });
+  });
+
+  function disableOthersPlayButtons(id, playButtons) {
+    playButtons.forEach(function (btn) {
+      if (btn.id != id) {
+        btn.checked = false;
+      }
+    });
+  }
 </script>
