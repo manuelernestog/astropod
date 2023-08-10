@@ -1,0 +1,77 @@
+<div id="audio-player-container" class="w-full bottom-0 sticky bg-base-100 flex px-5 h-16 items-center">
+  <audio src="/audio/musica.mp3" preload="metadata"></audio>
+  <button id="play-icon">Play</button>
+  <span id="current-time" class="ml-5 mr-2">0:00</span>/
+  <span id="duration" class="ml-2">0:00</span>
+  <input id="seek-slider" type="range" min="0" max="100" value="40" class="range range-xs mx-5" />
+  <button id="play-icon2" class="ml-5">mute</button>
+</div>
+
+<script>
+  const playIconContainer = document.getElementById("play-icon");
+  let playState = "play";
+
+  const audio = document.querySelector("audio");
+  const durationContainer = document.getElementById("duration");
+  const currentTimeContainer = document.getElementById("current-time");
+  const seekSlider = document.getElementById("seek-slider");
+
+  const calculateTime = (secs) => {
+    const minutes = Math.floor(secs / 60);
+    const seconds = Math.floor(secs % 60);
+    const returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
+    return `${minutes}:${returnedSeconds}`;
+  };
+
+  const displayDuration = () => {
+    durationContainer.textContent = calculateTime(audio.duration);
+  };
+
+  if (audio.readyState > 0) {
+    displayDuration();
+  } else {
+    audio.addEventListener("loadedmetadata", () => {
+      displayDuration();
+      seekSlider?.setAttribute("max", audio.duration);
+    });
+  }
+
+  playIconContainer.addEventListener("click", () => {
+    if (playState === "play") {
+      audio.play();
+      playState = "pause";
+    } else {
+      audio.pause();
+      playState = "play";
+    }
+  });
+
+  seekSlider.addEventListener("input", () => {
+    currentTimeContainer.textContent = calculateTime(seekSlider.value);
+  });
+
+  seekSlider.addEventListener("change", () => {
+    audio.currentTime = seekSlider.value;
+  });
+
+  audio.addEventListener("timeupdate", () => {
+    seekSlider.value = Math.floor(audio.currentTime);
+    currentTimeContainer.textContent = calculateTime(seekSlider.value);
+  });
+
+  //   const seekableAmount = audio.seekable.end(audio.seekable.length - 1);
+
+  //   const setSliderMax = () => {
+  //     seekSlider.max = Math.floor(audio.duration);
+  //   };
+
+  //   if (audio.readyState > 0) {
+  //     displayDuration();
+  //     setSliderMax();
+  //   } else {
+  //     audio.addEventListener("loadedmetadata", () => {
+  //       displayDuration();
+  //       setSliderMax();
+  //     });
+  //   }
+</script>
