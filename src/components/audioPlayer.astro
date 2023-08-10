@@ -6,7 +6,10 @@ import AudioIcon from "./icons/audioIcon.astro";
 import AudioMutedIcon from "./icons/audioMutedIcon.astro";
 ---
 
-<div id="audio-player-container" class="w-full bottom-0 sticky bg-base-100 flex px-5 h-16 items-center">
+<div
+  id="audio-player-container"
+  class="w-full bottom-0 sticky bg-base-100 flex px-5 h-16 items-center transition-opacity invisible opacity-0 duration-500"
+>
   <audio src="" preload="metadata"></audio>
   <label class="swap">
     <input type="checkbox" id="play-icon" />
@@ -64,6 +67,7 @@ import AudioMutedIcon from "./icons/audioMutedIcon.astro";
   const playIconContainer = document.getElementById("play-icon");
   const muteIconContainer = document.getElementById("mute-icon");
   const audioDownloadLink = document.getElementById("audio-download-link");
+  const musicPlayer = document.getElementById("audio-player-container");
 
   const audio = document.querySelector("audio");
   const durationContainer = document.getElementById("duration");
@@ -120,6 +124,7 @@ import AudioMutedIcon from "./icons/audioMutedIcon.astro";
   playButtons.forEach(function (btn) {
     btn.addEventListener("click", () => {
       if (new URL(audio.src).pathname != btn.dataset.audioUrl) {
+        musicPlayer?.classList.remove("invisible", "opacity-0");
         audio.src = btn.dataset.audioUrl;
         audioDownloadLink.href = btn.dataset.audioUrl;
         disableOthersPlayButtons(btn.id, playButtons);
