@@ -1,8 +1,9 @@
 ---
-const { title, cover, desc, url, badge } = Astro.props;
+const { title, cover, desc, url } = Astro.props;
 import { Image } from "@astrojs/image/components";
+import astropodConf from "../../astropod.conf.cjs";
 
-let cover_url = cover ? cover : "https://dpapp.bitqba.com/media/podcasts/dpapp/cover_thumbnail.webp";
+let cover_url = cover ? cover : astropodConf.cover;
 ---
 
 <div class="">
@@ -11,7 +12,6 @@ let cover_url = cover ? cover : "https://dpapp.bitqba.com/media/podcasts/dpapp/c
     <div class="grow w-full">
       <h1 class="text-xl font-semibold">
         {title}
-        {badge && <div class="badge badge-secondary mx-2">{badge}</div>}
       </h1>
       <p class="py-1 text-1xl">{desc}</p>
     </div>

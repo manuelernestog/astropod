@@ -6,7 +6,6 @@ const podcastSchema = z.object({
     audioUrl: z.string(),
     duration: z.string().optional(),
     pubDate: z.coerce.date().optional(),
-    badge: z.string().optional(),
     cover: z.string().optional(),
 });
 
