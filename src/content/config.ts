@@ -4,7 +4,7 @@ const podcastSchema = z.object({
     title: z.string(),
     description: z.string(),
     audioUrl: z.string(),
-    duration: z.string().optional(),
+    duration: z.number().optional(),
     pubDate: z.coerce.date().optional(),
     cover: z.string().optional(),
 });
