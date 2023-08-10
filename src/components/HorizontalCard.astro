@@ -1,20 +1,30 @@
 ---
-const { title, cover, desc, url, audioUrl, id } = Astro.props;
+const { title, cover, desc, url, audioUrl, id, pubDate, duration } = Astro.props;
+
 import { Image } from "@astrojs/image/components";
 import astropodConf from "../../astropod.conf.cjs";
+import dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
+dayjs.extend(localizedFormat);
+
 import PlayIcon from "./icons/playIcon.astro";
 import PauseIcon from "./icons/pauseIcon.astro";
 
 let cover_url = cover ? cover : astropodConf.cover;
+const displayDate = dayjs(pubDate).format("ll");
 ---
 
 <div class="">
   <div class="hero-content flex-col md:flex-row">
     <Image src={cover_url} aspectRatio="1:1" width={100} format="webp" alt={title} class="shadow-lg rounded-md" />
     <div class="grow w-full">
-      <h1 class="text-xl font-semibold">
+      <h2 class="text-xl font-semibold">
         {title}
-      </h1>
+      </h2>
+      <p class="text-sm font-medium opacity-60">
+        {duration && duration + " • "}
+        {displayDate}
+      </p>
       <p class="py-1 text-1xl">{desc}</p>
     </div>
     <label class="btn btn-circle mx-2 swap">
