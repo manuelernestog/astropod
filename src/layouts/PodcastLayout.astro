@@ -6,9 +6,7 @@ import localizedFormat from "dayjs/plugin/localizedFormat";
 import HeaderCard from "../components/HeaderCard.astro";
 import astropodConf from "../../astropod.conf.cjs";
 
-export interface Props extends podcastSchema {}
-
-const { title, description, pubDate, updatedDate, cover } = Astro.props;
+const { title, description, pubDate, cover } = Astro.props;
 dayjs.extend(localizedFormat);
 const displayDate = dayjs(pubDate).format("ll");
 ---

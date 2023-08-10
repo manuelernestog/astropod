@@ -21,12 +21,7 @@ const podcast: podcastSchema = entry.data;
 const { Content } = await entry.render();
 ---
 
-<PodcastLayout
-  title={podcast.title}
-  description={podcast.description}
-  pubDate={podcast.pubDate}
-  updatedDate={podcast.updatedDate}
->
+<PodcastLayout title={podcast.title} description={podcast.description} pubDate={podcast.pubDate} cover={podcast.cover}>
   <Content />
 </PodcastLayout>
 
