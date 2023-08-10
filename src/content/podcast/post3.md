@@ -2,7 +2,7 @@
 title: "Demo Post 3"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 pubDate: "Sep 12 2022"
-audioUrl: "asd"
+audioUrl: "https://www.w3schools.com/html/horse.ogg"
 cover: ""
 duration: ""
 ---
