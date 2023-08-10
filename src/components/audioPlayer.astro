@@ -51,7 +51,7 @@ import AudioMutedIcon from "./icons/audioMutedIcon.astro";
     </button>
     <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
       <li>
-        <a>
+        <a href="#" download id="audio-download-link">
           <DownloadIcon />
           Download</a
         >
@@ -63,6 +63,7 @@ import AudioMutedIcon from "./icons/audioMutedIcon.astro";
 <script>
   const playIconContainer = document.getElementById("play-icon");
   const muteIconContainer = document.getElementById("mute-icon");
+  const audioDownloadLink = document.getElementById("audio-download-link");
 
   const audio = document.querySelector("audio");
   const durationContainer = document.getElementById("duration");
@@ -120,6 +121,7 @@ import AudioMutedIcon from "./icons/audioMutedIcon.astro";
     btn.addEventListener("click", () => {
       if (new URL(audio.src).pathname != btn.dataset.audioUrl) {
         audio.src = btn.dataset.audioUrl;
+        audioDownloadLink.href = btn.dataset.audioUrl;
         disableOthersPlayButtons(btn.id, playButtons);
         playIconContainer.checked = true;
         audio.play();
