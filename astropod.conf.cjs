@@ -1,7 +1,7 @@
 export default {
-  name: "Astropod | Free Podcast Hosting",
+  name: "Astropod | Free Serverless Podcast Hosting",
   owner: "Manuel Ernesto",
-  description: "Astropod is a free and open-source template for host podcast using GitHub and GitHub-Pages.",
+  description: "Astropod is an open-source template for host your podcast for free using serverless model.",
   cover: "/Cover.webp",
   banner: "/banner.webp",
   explicit: false,

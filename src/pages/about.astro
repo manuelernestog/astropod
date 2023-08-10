@@ -1,0 +1,9 @@
+---
+import PodcastLayout from "../layouts/PodcastLayout.astro";
+import astropodConf from "../../astropod.conf.cjs";
+import { Content as AboutContent } from "../content/web/about.md";
+---
+
+<PodcastLayout title="About" description={astropodConf.description} cover={astropodConf.cover}>
+  <AboutContent />
+</PodcastLayout>
