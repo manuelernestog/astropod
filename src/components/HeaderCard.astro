@@ -4,6 +4,9 @@ import astropodConf from "../../astropod.conf.cjs";
 import TwitterIcon from "./icons/twitterIcon.astro";
 import YoutubeIcon from "./icons/youtubeIcon.astro";
 import TelegramIcon from "./icons/telegramIcon.astro";
+import GooglePodcastIcon from "./icons/googlePodcastIcon.astro";
+import SpotifyIcon from "./icons/spotifyIcon.astro";
+import ApplePodcastIcon from "./icons/applePodcastIcon.astro";
 ---
 
 <div class="card min-w-full bg-base-100 shadow-md pb-3">
@@ -15,7 +18,7 @@ import TelegramIcon from "./icons/telegramIcon.astro";
       >
         <div class="flex flex-col absolute bottom-0 left-52 px-3">
           <p class="mb-1 text-sm font-medium text-white">{subtitle}</p>
-          <p class="mb-3 text-4xl font-black text-white">{title}</p>
+          <h1 class="mb-3 text-4xl font-black text-white">{title}</h1>
         </div>
       </div>
     </div>
@@ -51,8 +54,9 @@ import TelegramIcon from "./icons/telegramIcon.astro";
         Listen on
       </label>
       <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-        <li><a>Item 1</a></li>
-        <li><a>Item 2</a></li>
+        <li><a><GooglePodcastIcon />Google Podcast</a></li>
+        <li><a><ApplePodcastIcon />Apple Podcast</a></li>
+        <li><a><SpotifyIcon />Spotify</a></li>
       </ul>
     </div>
 
