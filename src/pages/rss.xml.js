@@ -2,7 +2,7 @@ import xml2js from "xml2js";
 import dayjs from "dayjs";
 import astropodConfig from "../../astropod.config.json";
 
-const lastBuildDate = dayjs().format("ddd, MMM D, YYYY h:mm A");
+const lastBuildDate = dayjs().format("ddd, DD MMM YYYY hh:mm:ss ZZ");
 
 export async function get(context) {
   let podcast = {
@@ -16,14 +16,15 @@ export async function get(context) {
       },
       channel: [
         {
-          title: [astropodConfig.name],
+          title: cdata(astropodConfig.name),
+          description: cdata(astropodConfig.description),
           generator: ["Astropod"],
           lastBuildDate: lastBuildDate,
-          link: ["http://www.podcastwebsite.com"],
-          language: ["en-us"],
-          "itunes:subtitle": ["A short description of your podcast"],
-          "itunes:author": ["Author Name"],
-          "itunes:summary": ["A full description of your podcast"],
+          link: "http://www.podcastwebsite.com",
+          language: "en-us",
+          "itunes:subtitle": "A short description of your podcast",
+          "itunes:author": "Author Name",
+          "itunes:summary": "A full description of your podcast",
           "itunes:image": [
             {
               $: {
@@ -70,6 +71,10 @@ export async function get(context) {
   return {
     body: xml,
   };
+}
+
+function cdata(value) {
+  return `<![CDATA[${value}]]>`;
 }
 
 // import rss from "@astrojs/rss";
