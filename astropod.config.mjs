@@ -10,6 +10,7 @@ export default {
   social: {
     facebook: "",
     twitter: "",
+    telegram: "",
     youtube: "",
     linkedin: "",
     newsletter: "",
