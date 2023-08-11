@@ -7,21 +7,21 @@ export default {
   explicit: false,
   email: "",
   theme: "",
+  listenOn: {
+    spotify: "",
+    googlePodcast: "",
+    applePodcast: "",
+    easyPodcast: "",
+    amazonMusic: "",
+    fountain: ""
+  },
   social: {
     facebook: "",
     twitter: "",
-    telegram: "",
     youtube: "",
+    instagram: "",
+    telegram: "",
     linkedin: "",
-    newsletter: "",
-    email: "",
-  },
-  listenOn: {
-    easyPodcast: "",
-    spotify: "",
-    amazonMusic: "",
-    fountain: "",
-    googlePodcast: "",
-    applePodcast: "",
+    newsletter: ""
   },
 };
