@@ -22,7 +22,8 @@ export async function get(context) {
           title: cdata(astropodConfig.name),
           description: cdata(astropodConfig.description),
           link: astropodConfig.link,
-          author: astropodConfig.author,
+          copyright: cdata(astropodConfig.copyright),
+          author: cdata(astropodConfig.author),
           generator: ["Astropod"],
           lastBuildDate: lastBuildDate,
           language: cdata(astropodConfig.language),
@@ -31,12 +32,31 @@ export async function get(context) {
           "itunes:summary": astropodConfig.description,
           "itunes:type": "episodic",
           "itunes:explicit": astropodConfig.explicit,
+          "itunes:owner": {
+            "itunes:name": astropodConfig.owner,
+            "itunes:email": astropodConfig.email,
+          },
           image: {
             link: astropodConfig.link,
             title: cdata(astropodConfig.name),
             url: cover,
           },
-
+          "atom:link": [
+            {
+              $: {
+                href: `${astropodConfig.link}/rss.xml`,
+                rel: "self",
+                type: "application/rss+xml",
+              },
+            },
+            {
+              $: {
+                href: `https://pubsubhubbub.appspot.com/`,
+                rel: "hub",
+                type: "application/rss+xml",
+              },
+            },
+          ],
           // item: [
           //   {
           //     title: ["Episode Title"],
@@ -68,6 +88,22 @@ export async function get(context) {
       ],
     },
   };
+
+  if (astropodConfig.category) {
+    podcast.rss.channel[0].category = astropodConfig.category;
+    podcast.rss.channel[0]["itunes:category"] = {
+      $: {
+        text: astropodConfig.category,
+      },
+    };
+  }
+
+  if (astropodConfig.fundingUrl) 
+    podcast.rss.channel[0]["podcast:funding"] = {
+      $: {url: astropodConfig.fundingUrl},
+      _: astropodConfig.fundingText
+    }
+  
 
   let builder = new xml2js.Builder();
   let xml = builder.buildObject(podcast);

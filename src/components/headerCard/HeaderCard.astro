@@ -45,8 +45,8 @@ import HeartIcon from "../icons/heartIcon.astro";
     <FollowUsMenu />
 
     {
-      astropodConf.donateUrl && (
-        <a href={astropodConf.donateUrl} class="btn btn-ghost btn-square m-1" title="Donate">
+      astropodConf.fundingUrl && (
+        <a href={astropodConf.fundingUrl} class="btn btn-ghost btn-square m-1" title={astropodConf.fundingText}>
           <HeartIcon />
         </a>
       )
