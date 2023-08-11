@@ -19,6 +19,13 @@ import RssIcon from "../icons/rssIcon.astro";
           <h1 class="mb-3 text-lg md:text-4xl font-black text-white">{title}</h1>
         </div>
       </div>
+      {
+        astropodConf.explicit && (
+          <span class="text-[10px] md:text-xs font-medium text-white border inline px-2 m-2 absolute top-0 right-0">
+            EXPLICIT
+          </span>
+        )
+      }
     </div>
     <img
       class="-mt-28 mx-6 md:-mt-28 border-4 z-10 relative border-base-100 rounded-lg md:mx-11 w-24 h-24 md:h-40 md:w-40"
