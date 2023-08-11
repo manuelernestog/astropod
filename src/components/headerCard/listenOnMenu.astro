@@ -4,6 +4,11 @@ import GooglePodcastIcon from "../icons/googlePodcastIcon.astro";
 import SpotifyIcon from "../icons/spotifyIcon.astro";
 import ApplePodcastIcon from "../icons/applePodcastIcon.astro";
 import HeadphoneIcon from "../icons/headphoneIcon.astro";
+import PocketcastsIcon from "../icons/pocketcastsIcon.astro";
+import IvooxIcon from "../icons/ivooxIcon.astro";
+import AmazonMusicIcon from "../icons/amazonMusicIcon.astro";
+import FountainIcon from "../icons/fountainIcon.astro";
+import DeezerIcon from "../icons/deezerIcon.astro";
 
 const listenOn = astropodConfig.listenOn;
 let hasListenOn = false 
@@ -23,9 +28,15 @@ for (const key in listenOn) {
       <span class="hidden md:inline-block">Listen on</span>
     </label>
     <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-      {listenOn.googlePodcast && (<li><a><GooglePodcastIcon />Google Podcast</a></li>)}
-      {listenOn.applePodcast && (<li><a><ApplePodcastIcon />Apple Podcast</a></li>)}
-      {listenOn.spotify && (<li><a><SpotifyIcon />Spotify</a></li>)}
+      {listenOn.googlePodcast && (<li><a href={listenOn.googlePodcast}><GooglePodcastIcon />Google Podcast</a></li>)}
+      {listenOn.applePodcast && (<li><a href={listenOn.applePodcast}><ApplePodcastIcon />Apple Podcast</a></li>)}
+      {listenOn.spotify && (<li><a href={listenOn.spotify}><SpotifyIcon />Spotify</a></li>)}
+      {listenOn.easyPodcast && (<li><a href={listenOn.easyPodcast}><AmazonMusicIcon />Easy Podcast</a></li>)}
+      {listenOn.amazonMusic && (<li><a href={listenOn.amazonMusic}><AmazonMusicIcon />Amazon Music</a></li>)}
+      {listenOn.ivoox && (<li><a href={listenOn.ivoox}><IvooxIcon />Ivoox</a></li>)}
+      {listenOn.pocketcasts && (<li><a href={listenOn.pocketcasts}><PocketcastsIcon />Pocketcasts</a></li>)}
+      {listenOn.fountain && (<li><a href={listenOn.fountain}><FountainIcon />Fountain</a></li>)}
+      {listenOn.deezer && (<li><a href={listenOn.deezer}><DeezerIcon />Deezer</a></li>)}
     </ul>
   </div>
 )}
