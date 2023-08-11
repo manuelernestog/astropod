@@ -23,12 +23,12 @@ export default {
     deezer: "",
   },
   social: {
-    facebook: "1",
-    twitter: "1",
-    youtube: "1",
-    instagram: "1",
-    telegram: "1",
-    linkedin: "1",
-    newsletter: "1"
+    facebook: "",
+    twitter: "",
+    youtube: "",
+    instagram: "",
+    telegram: "",
+    linkedin: "",
+    newsletter: ""
   },
 };

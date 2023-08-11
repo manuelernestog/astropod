@@ -3,6 +3,11 @@ import astropodConfig from "../../../astropod.config.mjs";
 import TwitterIcon from "../icons/twitterIcon.astro";
 import YoutubeIcon from "../icons/youtubeIcon.astro";
 import TelegramIcon from "../icons/telegramIcon.astro";
+import FacebookIcon from "../icons/facebookIcon.astro";
+import InstagramIcon from "../icons/instagramIcon.astro";
+import NewsletterIcon from "../icons/newsletterIcon.astro";
+
+
 import ExternalLinkIcon from "../icons/externalLinkIcon.astro";
 
 const social = astropodConfig.social;
@@ -22,9 +27,12 @@ for (const key in social) {
     <span class="hidden md:inline-block">Follow us</span>
   </label>
   <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-    {social.twitter && (<li><a><TwitterIcon />Twitter</a></li>)}
-    {social.youtube && (<li><a><YoutubeIcon />Youtube</a></li>)}
-    {social.telegram && (<li><a><TelegramIcon />Youtube</a></li>)}
+    {social.instagram && (<li><a href={social.instagram}><InstagramIcon />Instagram</a></li>)}
+    {social.facebook && (<li><a href={social.facebook}><FacebookIcon />Facebook</a></li>)}
+    {social.twitter && (<li><a href={social.twitter}><TwitterIcon />Twitter</a></li>)}
+    {social.youtube && (<li><a href={social.youtube}><YoutubeIcon />Youtube</a></li>)}
+    {social.telegram && (<li><a href={social.telegram}><TelegramIcon />Telegram</a></li>)}
+    {social.newsletter && (<li><a href={social.newsletter}><NewsletterIcon />Newsletter</a></li>)}
   </ul>
 </div>
 )}
