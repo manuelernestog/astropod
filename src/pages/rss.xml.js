@@ -2,7 +2,10 @@ import xml2js from "xml2js";
 import dayjs from "dayjs";
 import astropodConfig from "../../astropod.config.json";
 
+import { APIContext } from "astro";
+
 const lastBuildDate = dayjs().format("ddd, DD MMM YYYY hh:mm:ss ZZ");
+const cover = isFullUrl(astropodConfig.cover) ? astropodConfig.cover : astropodConfig.link + astropodConfig.cover;
 
 export async function get(context) {
   let podcast = {
@@ -18,20 +21,21 @@ export async function get(context) {
         {
           title: cdata(astropodConfig.name),
           description: cdata(astropodConfig.description),
+          link: astropodConfig.link,
+          author: astropodConfig.author,
           generator: ["Astropod"],
           lastBuildDate: lastBuildDate,
-          link: "http://www.podcastwebsite.com",
-          language: "en-us",
-          "itunes:subtitle": "A short description of your podcast",
-          "itunes:author": "Author Name",
-          "itunes:summary": "A full description of your podcast",
-          "itunes:image": [
-            {
-              $: {
-                href: "http://www.podcastwebsite.com/podcast.jpg",
-              },
-            },
-          ],
+          language: cdata(astropodConfig.language),
+          "itunes:author": astropodConfig.author,
+          "itunes:image": { $: { href: cover } },
+          "itunes:summary": astropodConfig.description,
+          "itunes:type": "episodic",
+          "itunes:explicit": astropodConfig.explicit,
+          image: {
+            link: astropodConfig.link,
+            title: cdata(astropodConfig.name),
+            url: cover,
+          },
 
           // item: [
           //   {
@@ -75,6 +79,14 @@ export async function get(context) {
 
 function cdata(value) {
   return `<![CDATA[${value}]]>`;
+}
+
+function isFullUrl(urlString) {
+  try {
+    return Boolean(new URL(urlString));
+  } catch (e) {
+    return false;
+  }
 }
 
 // import rss from "@astrojs/rss";

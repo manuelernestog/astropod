@@ -1,6 +1,7 @@
 {
   "name": "Astropod | Free Serverless Podcast Hosting",
   "description": "Astropod is an open-source template for host your podcast for free using serverless model.",
+  "link": "https://astropod.com",
   "cover": "/cover.webp",
   "banner": "/banner.webp",
   "author": "Manuel Ernesto",
