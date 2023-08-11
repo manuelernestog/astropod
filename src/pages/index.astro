@@ -5,9 +5,8 @@ import { getCollection } from "astro:content";
 import astropodConfig from "../../astropod.config.mjs";
 import HeaderCard from "../components/headerCard/HeaderCard.astro";
 import AudioPlayer from "../components/audioPlayer.astro";
-import HorizontalCardsScript from "../components/HorizontalCardsScript.astro";
 
-const posts = (await getCollection("podcast")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const posts = (await getCollection("episode")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const last_posts = posts.slice(0, 3);
 ---
@@ -22,7 +21,7 @@ const last_posts = posts.slice(0, 3);
           title={post.data.title}
           img={post.data.cover}
           desc={post.data.description}
-          url={"/podcast/" + post.slug}
+          url={"/episode/" + post.slug}
           audioUrl={post.data.audioUrl}
           pubDate={post.data.pubDate}
           duration={post.data.duration}

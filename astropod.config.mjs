@@ -1,6 +1,6 @@
 export default {
   name: "Astropod | Free Serverless Podcast Hosting",
-  description: "Astropod is an open-source template for host your podcast for free using serverless model.",
+  about: "Astropod is an open-source template for host your podcast for free using serverless model.",
   cover: "/cover.webp",
   banner: "/banner.webp",
   author: "Manuel Ernesto",
@@ -15,7 +15,7 @@ export default {
     spotify: "",
     googlePodcast: "",
     applePodcast: "",
-    easyPodcast: "2",
+    easyPodcast: "",
     amazonMusic: "",
     fountain: "",
     ivoox: "",
@@ -23,12 +23,12 @@ export default {
     deezer: "",
   },
   social: {
-    facebook: "",
-    twitter: "",
-    youtube: "",
-    instagram: "",
-    telegram: "",
-    linkedin: "",
-    newsletter: ""
+    facebook: "1",
+    twitter: "1",
+    youtube: "1",
+    instagram: "1",
+    telegram: "1",
+    linkedin: "1",
+    newsletter: "1"
   },
 };

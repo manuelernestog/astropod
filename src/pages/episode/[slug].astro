@@ -1,11 +1,11 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content";
-import { podcastSchema } from "../../content/config";
-import PodcastLayout from "../../layouts/PodcastLayout.astro";
+import { episodeSchema } from "../../content/config";
+import EpisodeLayout from "../../layouts/EpisodeLayout.astro";
 import AudioPlayer from "../../components/audioPlayer.astro";
 
 export async function getStaticPaths() {
-  const postEntries = await getCollection("podcast");
+  const postEntries = await getCollection("episode");
   return postEntries.map((entry) => ({
     params: { slug: entry.slug },
     props: { entry },
@@ -13,27 +13,27 @@ export async function getStaticPaths() {
 }
 
 interface Props {
-  entry: CollectionEntry<"podcast">;
+  entry: CollectionEntry<"episode">;
 }
 
 const { entry } = Astro.props;
-const podcast: podcastSchema = entry.data;
+const episode: episodeSchema = entry.data;
 const { Content } = await entry.render();
 ---
 
-<PodcastLayout title={podcast.title} description={podcast.description} pubDate={podcast.pubDate} cover={podcast.cover}>
+<EpisodeLayout title={episode.title} description={episode.description} pubDate={episode.pubDate} cover={episode.cover}>
   <Content />
-</PodcastLayout>
+</EpisodeLayout>
 
 <AudioPlayer />
 
-<script define:vars={{ podcast }}>
+<script define:vars={{ episode }}>
 const musicPlayer = document.getElementById("audio-player-container");
 const audioDownloadLink = document.getElementById("audio-download-link");
 
 musicPlayer?.classList.remove("hidden", "opacity-0");
 musicPlayer?.classList.add("flex");
 const audio = document.querySelector("audio");
-audio.src = podcast.audioUrl;
-audioDownloadLink.href = podcast.audioUrl;
+audio.src = episode.audioUrl;
+audioDownloadLink.href = episode.audioUrl;
 </script>

@@ -9,6 +9,7 @@ import IvooxIcon from "../icons/ivooxIcon.astro";
 import AmazonMusicIcon from "../icons/amazonMusicIcon.astro";
 import FountainIcon from "../icons/fountainIcon.astro";
 import DeezerIcon from "../icons/deezerIcon.astro";
+import EasyPodcastIcon from "../icons/easyPodcastIcon.astro";
 
 const listenOn = astropodConfig.listenOn;
 let hasListenOn = false 
@@ -31,7 +32,7 @@ for (const key in listenOn) {
       {listenOn.googlePodcast && (<li><a href={listenOn.googlePodcast}><GooglePodcastIcon />Google Podcast</a></li>)}
       {listenOn.applePodcast && (<li><a href={listenOn.applePodcast}><ApplePodcastIcon />Apple Podcast</a></li>)}
       {listenOn.spotify && (<li><a href={listenOn.spotify}><SpotifyIcon />Spotify</a></li>)}
-      {listenOn.easyPodcast && (<li><a href={listenOn.easyPodcast}><AmazonMusicIcon />Easy Podcast</a></li>)}
+      {listenOn.easyPodcast && (<li><a href={listenOn.easyPodcast}><EasyPodcastIcon />Easy Podcast</a></li>)}
       {listenOn.amazonMusic && (<li><a href={listenOn.amazonMusic}><AmazonMusicIcon />Amazon Music</a></li>)}
       {listenOn.ivoox && (<li><a href={listenOn.ivoox}><IvooxIcon />Ivoox</a></li>)}
       {listenOn.pocketcasts && (<li><a href={listenOn.pocketcasts}><PocketcastsIcon />Pocketcasts</a></li>)}

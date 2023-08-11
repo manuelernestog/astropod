@@ -1,6 +1,6 @@
 import { z, defineCollection } from "astro:content";
 
-const podcastSchema = z.object({
+const episodeSchema = z.object({
     title: z.string(),
     description: z.string(),
     audioUrl: z.string(),
@@ -9,10 +9,10 @@ const podcastSchema = z.object({
     cover: z.string().optional(),
 });
 
-export type podcastSchema = z.infer<typeof podcastSchema>;
+export type episodeSchema = z.infer<typeof episodeSchema>;
 
-const podcastCollection = defineCollection({ schema: podcastSchema });
+const episodeCollection = defineCollection({ schema: episodeSchema });
 
 export const collections = {
-    'podcast': podcastCollection,
+    'episode': episodeCollection,
 }

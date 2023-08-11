@@ -12,7 +12,7 @@ let cover_url = cover ? cover : astropodConf.cover;
 const displayDate = dayjs(pubDate).format("ll");
 ---
 
-<div class="podcast-card">
+<div class="episode-card">
   <div class="hero-content flex-row">
     <a href={url} class="min-w-fit">
       <img src={cover_url} alt={title} class="shadow-lg rounded-md w-20 h-20 md:w-24 md:h-24" />
@@ -43,7 +43,7 @@ const displayDate = dayjs(pubDate).format("ll");
 </div>
 
 <style>
-  .podcast-card:last-child hr {
+  .episode-card:last-child hr {
     display: none;
   }
 </style>
