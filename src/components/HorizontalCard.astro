@@ -1,7 +1,7 @@
 ---
 const { title, cover, desc, url, audioUrl, id, pubDate, duration } = Astro.props;
 
-import astropodConf from "../../astropod.config.mjs";
+import astropodConf from "../../astropod.config.json";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 dayjs.extend(localizedFormat);

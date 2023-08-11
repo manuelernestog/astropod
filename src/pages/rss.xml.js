@@ -1,20 +1,5 @@
-// import rss from "@astrojs/rss";
-// import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
-// import { getCollection } from "astro:content";
-// const episode = await getCollection("episode");
-// return rss({
-//   title: SITE_TITLE,
-//   description: SITE_DESCRIPTION,
-//   site: import.meta.env.SITE,
-//   items: episode.map((episode) => ({
-//     title: episode.data.title,
-//     pubDate: episode.data.pubDate,
-//     description: episode.data.description,
-//     link: `/episode/${episode.slug}/`,
-//   })),
-// });
-
-import xml2js from 'xml2js';
+import xml2js from "xml2js";
+import astropodConfig from "../../astropod.config.json";
 
 export async function get(context) {
   let podcast = {
@@ -22,6 +7,9 @@ export async function get(context) {
       $: {
         version: "2.0",
         "xmlns:itunes": "http://www.itunes.com/dtds/podcast-1.0.dtd",
+        "xmlns:podcast": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md",
+        "xmlns:atom": "http://www.w3.org/2005/Atom",
+        "xmlns:content": "http://purl.org/rss/1.0/modules/content/",
       },
       channel: [
         {
@@ -77,3 +65,19 @@ export async function get(context) {
     body: xml,
   };
 }
+
+// import rss from "@astrojs/rss";
+// import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+// import { getCollection } from "astro:content";
+// const episode = await getCollection("episode");
+// return rss({
+//   title: SITE_TITLE,
+//   description: SITE_DESCRIPTION,
+//   site: import.meta.env.SITE,
+//   items: episode.map((episode) => ({
+//     title: episode.data.title,
+//     pubDate: episode.data.pubDate,
+//     description: episode.data.description,
+//     link: `/episode/${episode.slug}/`,
+//   })),
+// });
