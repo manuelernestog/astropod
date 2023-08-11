@@ -1,35 +1,31 @@
 ---
+import astropodConfig from "../../../astropod.config.mjs";
 import GooglePodcastIcon from "../icons/googlePodcastIcon.astro";
 import SpotifyIcon from "../icons/spotifyIcon.astro";
 import ApplePodcastIcon from "../icons/applePodcastIcon.astro";
+import HeadphoneIcon from "../icons/headphoneIcon.astro";
 
+const listenOn = astropodConfig.listenOn;
+let hasListenOn = false 
+
+for (const key in listenOn) {
+  if (listenOn[key]){
+    hasListenOn = true;
+    break;
+  }
+}
 ---
 
-
-<div class="dropdown dropdown-hover dropdown-end">
+{hasListenOn && (
+  <div class="dropdown dropdown-hover dropdown-end">
     <label tabindex="0" class="btn btn-ghost m-1">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="icon icon-tabler icon-tabler-headphones"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        stroke-width="2"
-        stroke="currentColor"
-        fill="none"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M4 13m0 2a2 2 0 0 1 2 -2h1a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-1a2 2 0 0 1 -2 -2z"></path>
-        <path d="M15 13m0 2a2 2 0 0 1 2 -2h1a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-1a2 2 0 0 1 -2 -2z"></path>
-        <path d="M4 15v-3a8 8 0 0 1 16 0v3"></path>
-      </svg>
+      <HeadphoneIcon />
       <span class="hidden md:inline-block">Listen on</span>
     </label>
     <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-      <li><a><GooglePodcastIcon />Google Podcast</a></li>
-      <li><a><ApplePodcastIcon />Apple Podcast</a></li>
-      <li><a><SpotifyIcon />Spotify</a></li>
+      {listenOn.googlePodcast && (<li><a><GooglePodcastIcon />Google Podcast</a></li>)}
+      {listenOn.applePodcast && (<li><a><ApplePodcastIcon />Apple Podcast</a></li>)}
+      {listenOn.spotify && (<li><a><SpotifyIcon />Spotify</a></li>)}
     </ul>
   </div>
+)}

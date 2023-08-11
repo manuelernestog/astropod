@@ -20,5 +20,7 @@ export default {
     spotify: "",
     amazonMusic: "",
     fountain: "",
+    googlePodcast: "",
+    applePodcast: "",
   },
 };
