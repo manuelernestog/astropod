@@ -11,9 +11,10 @@
   "category": "",
   "keywords": "",
   "theme": "",
+  "donateUrl": "1",
   "listenOn": {
     "spotify": "",
-    "googlePodcast": "",
+    "googlePodcast": "s",
     "applePodcast": "",
     "easyPodcast": "",
     "amazonMusic": "",
@@ -23,7 +24,7 @@
     "deezer": ""
   },
   "social": {
-    "facebook": "",
+    "facebook": "d",
     "twitter": "",
     "youtube": "",
     "instagram": "",

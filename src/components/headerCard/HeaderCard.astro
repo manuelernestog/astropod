@@ -5,6 +5,7 @@ import astropodConf from "../../../astropod.config.json";
 import ListenOnMenu from "./listenOnMenu.astro";
 import FollowUsMenu from "./followUsMenu.astro";
 import RssIcon from "../icons/rssIcon.astro";
+import HeartIcon from "../icons/heartIcon.astro";
 ---
 
 <div class="card min-w-full bg-base-100 shadow-md md:pb-3">
@@ -43,7 +44,15 @@ import RssIcon from "../icons/rssIcon.astro";
 
     <FollowUsMenu />
 
-    <a href="/rss.xml" class="btn btn-ghost btn-square m-1">
+    {
+      astropodConf.donateUrl && (
+        <a href={astropodConf.donateUrl} class="btn btn-ghost btn-square m-1" title="Donate">
+          <HeartIcon />
+        </a>
+      )
+    }
+
+    <a href="/rss.xml" class="btn btn-ghost btn-square m-1" title="RSS Feed">
       <RssIcon />
     </a>
   </div>

@@ -1,5 +1,8 @@
 import xml2js from "xml2js";
+import dayjs from "dayjs";
 import astropodConfig from "../../astropod.config.json";
+
+const lastBuildDate = dayjs().format("ddd, MMM D, YYYY h:mm A");
 
 export async function get(context) {
   let podcast = {
@@ -13,7 +16,9 @@ export async function get(context) {
       },
       channel: [
         {
-          title: ["Podcast Title"],
+          title: [astropodConfig.name],
+          generator: ["Astropod"],
+          lastBuildDate: lastBuildDate,
           link: ["http://www.podcastwebsite.com"],
           language: ["en-us"],
           "itunes:subtitle": ["A short description of your podcast"],
@@ -26,33 +31,34 @@ export async function get(context) {
               },
             },
           ],
-          item: [
-            {
-              title: ["Episode Title"],
-              "itunes:author": ["Author Name"],
-              "itunes:subtitle": ["A short description of the episode"],
-              "itunes:summary": ["A full description of the episode"],
-              "itunes:image": [
-                {
-                  $: {
-                    href: "http://www.podcastwebsite.com/episode.jpg",
-                  },
-                },
-              ],
-              enclosure: [
-                {
-                  $: {
-                    url: "http://www.podcastwebsite.com/episode.mp3",
-                    length: "12345678",
-                    type: "audio/mpeg",
-                  },
-                },
-              ],
-              guid: ["http://www.podcastwebsite.com/episode.mp3"],
-              pubDate: ["Tue, 07 Feb 2012 00:00:00 GMT"],
-              "itunes:duration": ["00:45:00"],
-            },
-          ],
+
+          // item: [
+          //   {
+          //     title: ["Episode Title"],
+          //     "itunes:author": ["Author Name"],
+          //     "itunes:subtitle": ["A short description of the episode"],
+          //     "itunes:summary": ["A full description of the episode"],
+          //     "itunes:image": [
+          //       {
+          //         $: {
+          //           href: "http://www.podcastwebsite.com/episode.jpg",
+          //         },
+          //       },
+          //     ],
+          //     enclosure: [
+          //       {
+          //         $: {
+          //           url: "http://www.podcastwebsite.com/episode.mp3",
+          //           length: "12345678",
+          //           type: "audio/mpeg",
+          //         },
+          //       },
+          //     ],
+          //     guid: ["http://www.podcastwebsite.com/episode.mp3"],
+          //     pubDate: ["Tue, 07 Feb 2012 00:00:00 GMT"],
+          //     "itunes:duration": ["00:45:00"],
+          //   },
+          // ],
         },
       ],
     },
