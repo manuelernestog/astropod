@@ -12,6 +12,7 @@ export default {
     twitter: "",
     youtube: "",
     linkedin: "",
+    newsletter: "",
     email: "",
   },
   listenOn: {
