@@ -111,12 +111,16 @@ export async function get(context) {
     };
   }
 
-  const items = episode.map((episode) => ({
-    title: cdata(episode.data.title),
-    description: cdata(marked.parse(episode.body)),
-    pubDate: dayjs(episode.data.pubDate).format("ddd, DD MMM YYYY hh:mm:ss ZZ"),
-    link: `${astropodConfig.link}/episode/${episode.slug}/`,
-  }));
+  const items = episode.map((episode) => {
+    let item = {
+      title: cdata(episode.data.title),
+      description: cdata(marked.parse(episode.body)),
+      pubDate: dayjs(episode.data.pubDate).format("ddd, DD MMM YYYY hh:mm:ss ZZ"),
+      link: `${astropodConfig.link}/episode/${episode.slug}/`,
+    };
+    item["itunes:explicit"] = episode.data.explicit === undefined ? astropodConfig.explicit : episode.data.explicit;
+    return item;
+  });
 
   podcast.rss.channel[0].item = items;
 
