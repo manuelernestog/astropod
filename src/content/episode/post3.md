@@ -2,7 +2,7 @@
 title: "Demo Post 3"
 pubDate: "Sep 12 2022"
 audioUrl: "https://www.w3schools.com/html/horse.ogg"
-cover: "/post_img.webp"
+cover: ""
 duration: "1:2:10"
 size: 30
 episode: 3
