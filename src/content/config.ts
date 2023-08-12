@@ -8,6 +8,8 @@ const episodeSchema = z.object({
     cover: z.string().optional(),
     explicit: z.boolean().optional(),
     episode: z.number().optional(),
+    season: z.number().optional(),
+    episodeType: z.string().optional(),
 });
 
 export type episodeSchema = z.infer<typeof episodeSchema>;

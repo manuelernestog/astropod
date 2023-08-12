@@ -5,7 +5,9 @@ cover: ""
 pubDate: "Sep 10 2022"
 duration: "3:40"
 episode: 1
+season: 1
 explicit: true
+episodeType: "full"
 ---
 
 [saskeeee](https://diomio.com)

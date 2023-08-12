@@ -117,6 +117,10 @@ export async function get(context) {
       description: cdata(marked.parse(episode.body)),
       pubDate: dayjs(episode.data.pubDate).format("ddd, DD MMM YYYY hh:mm:ss ZZ"),
       link: `${astropodConfig.link}/episode/${episode.slug}/`,
+      guid: `${astropodConfig.link}/episode/${episode.slug}/`,
+      "itunes:episode": episode.data.episode,
+      "itunes:season": episode.data.season,
+      "itunes:episodeType": episode.data.episodeType,
     };
     item["itunes:explicit"] = episode.data.explicit === undefined ? astropodConfig.explicit : episode.data.explicit;
     return item;
