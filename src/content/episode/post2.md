@@ -4,6 +4,7 @@ audioUrl: "/audio/audio1.mp3"
 cover: ""
 pubDate: "Sep 11 2022"
 duration: "3:40"
+size: 20
 episode: 2
 season: 1
 episodeType: "full"

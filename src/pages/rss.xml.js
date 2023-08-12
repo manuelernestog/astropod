@@ -122,6 +122,14 @@ export async function get(context) {
       "itunes:season": episode.data.season,
       "itunes:episodeType": episode.data.episodeType,
       "itunes:explicit": episode.data.explicit === undefined ? astropodConfig.explicit : episode.data.explicit,
+      enclosure: {
+        $: {
+          url: isFullUrl(episode.data.audioUrl) ? episode.data.audioUrl : astropodConfig.link + episode.data.audioUrl,
+          length: episode.data.size && episode.data.size * 1000000,
+          type: "audio/mpeg",
+        },
+      },
+      "itunes:duration": timeToSeconds(episode.data.duration),
     };
     const cover_url = episode.data.cover ? episode.data.cover : astropodConfig.cover;
     item["itunes:image"] = {
@@ -149,5 +157,19 @@ function isFullUrl(urlString) {
     return Boolean(new URL(urlString));
   } catch (e) {
     return false;
+  }
+}
+
+function timeToSeconds(time) {
+  const parts = time.split(":");
+
+  if (parts.length === 3) {
+    const [hours, minutes, seconds] = parts.map(Number);
+    return hours * 3600 + minutes * 60 + seconds;
+  } else if (parts.length === 2) {
+    const [minutes, seconds] = parts.map(Number);
+    return minutes * 60 + seconds;
+  } else {
+    return 0;
   }
 }
