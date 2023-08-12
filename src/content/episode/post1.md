@@ -4,7 +4,6 @@ audioUrl: "https://archive.org/download/karbonaized-genera-capturas-de-tu-codigo
 cover: ""
 pubDate: "Sep 10 2022"
 duration: "3:40"
-season: 1
 episode: 1
 explicit: true
 ---

@@ -5,13 +5,13 @@ import localizedFormat from "dayjs/plugin/localizedFormat";
 import HeaderCard from "../components/headerCard/HeaderCard.astro";
 import astropodConf from "../../astropod.config.json";
 
-const { title, description, pubDate, cover } = Astro.props;
+const { title, explicit, pubDate, cover, description } = Astro.props;
 dayjs.extend(localizedFormat);
 const displayDate = dayjs(pubDate).format("ll");
 ---
 
 <BaseLayout title={title} description={description} image={cover}>
-  <HeaderCard title={title} subtitle={astropodConf.name} image={cover} />
+  <HeaderCard title={title} subtitle={astropodConf.name} image={cover} explicit={explicit} />
 
   <main class="md:flex md:justify-center">
     <article class="card prose min-w-full prose-img:mx-auto bg-base-100 shadow-md p-8 mt-12">

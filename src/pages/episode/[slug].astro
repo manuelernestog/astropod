@@ -3,6 +3,8 @@ import { CollectionEntry, getCollection } from "astro:content";
 import { episodeSchema } from "../../content/config";
 import EpisodeLayout from "../../layouts/EpisodeLayout.astro";
 import AudioPlayer from "../../components/audioPlayer.astro";
+import PlainTextRenderer from "marked-plaintext";
+import marked from "marked";
 
 export async function getStaticPaths() {
   const postEntries = await getCollection("episode");
@@ -19,9 +21,18 @@ interface Props {
 const { entry } = Astro.props;
 const episode: episodeSchema = entry.data;
 const { Content } = await entry.render();
+
+const renderer = new PlainTextRenderer();
+const description = marked.parse(entry.body.slice(0, 200), { renderer: renderer });
 ---
 
-<EpisodeLayout title={episode.title} description={episode.description} pubDate={episode.pubDate} cover={episode.cover}>
+<EpisodeLayout
+  title={episode.title}
+  pubDate={episode.pubDate}
+  cover={episode.cover}
+  explicit={episode.explicit}
+  description={description}
+>
   <Content />
 </EpisodeLayout>
 
@@ -31,9 +42,9 @@ const { Content } = await entry.render();
 const musicPlayer = document.getElementById("audio-player-container");
 const audioDownloadLink = document.getElementById("audio-download-link");
 
-musicPlayer?.classList.remove("hidden", "opacity-0");
-musicPlayer?.classList.add("flex");
-const audio = document.querySelector("audio");
-audio.src = episode.audioUrl;
-audioDownloadLink.href = episode.audioUrl;
+  musicPlayer?.classList.remove("hidden", "opacity-0");
+  musicPlayer?.classList.add("flex");
+  const audio = document.querySelector("audio");
+  audio.src = episode.audioUrl;
+  audioDownloadLink.href = episode.audioUrl;
 </script>

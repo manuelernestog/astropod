@@ -7,7 +7,7 @@ import FollowUsMenu from "./followUsMenu.astro";
 import RssIcon from "../icons/rssIcon.astro";
 import HeartIcon from "../icons/heartIcon.astro";
 
-console.log(explicit);
+const explicitLabel = (explicit === undefined) ? astropodConf.explicit : explicit;
 ---
 
 <div class="card min-w-full bg-base-100 shadow-md md:pb-3">
@@ -23,7 +23,7 @@ console.log(explicit);
         </div>
       </div>
       {
-        astropodConf.explicit && (
+        explicitLabel && (
           <span class="text-[10px] md:text-xs font-medium text-white border inline px-2 m-2 absolute top-0 right-0">
             EXPLICIT
           </span>
