@@ -1,5 +1,5 @@
 ---
-import astropodConf from "../../../astropod.config.json";
+import astropodConfig from "../../../astropod.config.json";
 const { title, subtitle, explicit, cover } = Astro.props;
 
 import ListenOnMenu from "./listenOnMenu.astro";
@@ -7,14 +7,14 @@ import FollowUsMenu from "./followUsMenu.astro";
 import RssIcon from "../icons/rssIcon.astro";
 import HeartIcon from "../icons/heartIcon.astro";
 
-const explicitLabel = (explicit === undefined) ? astropodConf.explicit : explicit;
-let cover_url = cover ? cover : astropodConf.cover;
+const explicitLabel = (explicit === undefined) ? astropodConfig.explicit : explicit;
+let cover_url = cover ? cover : astropodConfig.cover;
 ---
 
 <div class="card min-w-full bg-base-100 shadow-md md:pb-3">
   <div class="aspect-[3/1] mt-5 md:min-w-[720px]">
     <div class="relative inline-block">
-      <img src={astropodConf.banner} alt="imgen" />
+      <img src={astropodConfig.banner} alt="imgen" />
       <div
         class="absolute top-0 left-0 items-center justify-center w-full h-full bg-gradient-to-t from-gray-900 to-50% to-transparent"
       >
@@ -48,8 +48,8 @@ let cover_url = cover ? cover : astropodConf.cover;
     <FollowUsMenu />
 
     {
-      astropodConf.fundingUrl && (
-        <a href={astropodConf.fundingUrl} class="btn btn-ghost btn-square m-1" title={astropodConf.fundingText}>
+      astropodConfig.fundingUrl && (
+        <a href={astropodConfig.fundingUrl} class="btn btn-ghost btn-square m-1" title={astropodConfig.fundingText}>
           <HeartIcon />
         </a>
       )

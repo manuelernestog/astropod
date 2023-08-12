@@ -1,14 +1,14 @@
 ---
 const { title, cover, desc, url, audioUrl, id, pubDate, duration } = Astro.props;
 
-import astropodConf from "../../astropod.config.json";
+import astropodConfig from "../../astropod.config.json";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 dayjs.extend(localizedFormat);
 import PlayIcon from "./icons/playIcon.astro";
 import PauseIcon from "./icons/pauseIcon.astro";
 
-let cover_url = cover ? cover : astropodConf.cover;
+let cover_url = cover ? cover : astropodConfig.cover;
 const displayDate = dayjs(pubDate).format("ll");
 ---
 

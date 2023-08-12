@@ -123,6 +123,8 @@ export async function get(context) {
       "itunes:episodeType": episode.data.episodeType,
     };
     item["itunes:explicit"] = episode.data.explicit === undefined ? astropodConfig.explicit : episode.data.explicit;
+    const cover_url = episode.data.cover ? episode.data.cover : astropodConfig.cover;
+    item["itunes:image"] =  isFullUrl(cover_url) ? cover_url : astropodConfig.link + cover_url;
     return item;
   });
 
