@@ -10,10 +10,10 @@
   "email": "contact.manuelernestog@gmail.com",
   "language": "en",
   "explicit": false,
-  "category": "",
+  "category": "Technology",
   "theme": "",
-  "fundingUrl": "",
-  "fundingText": "",
+  "fundingUrl": "/donate",
+  "fundingText": "Support Us",
   "listenOn": {
     "spotify": "",
     "googlePodcast": "",

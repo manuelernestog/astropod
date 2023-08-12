@@ -98,12 +98,15 @@ export async function get(context) {
     };
   }
 
-  if (astropodConfig.fundingUrl) 
+  if (astropodConfig.fundingUrl) {
+    const fundingUrl = isFullUrl(astropodConfig.fundingUrl)
+      ? astropodConfig.fundingUrl
+      : astropodConfig.link + astropodConfig.fundingUrl;
     podcast.rss.channel[0]["podcast:funding"] = {
-      $: {url: astropodConfig.fundingUrl},
-      _: astropodConfig.fundingText
-    }
-  
+      $: { url: fundingUrl },
+      _: astropodConfig.fundingText,
+    };
+  }
 
   let builder = new xml2js.Builder();
   let xml = builder.buildObject(podcast);
