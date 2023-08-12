@@ -23,7 +23,7 @@ const last_posts = posts.slice(0, 3);
       last_posts.map((post, index) => (
         <HorizontalCard
           title={post.data.title}
-          img={post.data.cover}
+          cover={post.data.cover}
           desc={marked.parse(post.body.slice(0, 200), { renderer: renderer })}
           url={"/episode/" + post.slug}
           audioUrl={post.data.audioUrl}

@@ -1,6 +1,6 @@
 ---
 import astropodConf from "../../../astropod.config.json";
-const { title, subtitle, explicit } = Astro.props;
+const { title, subtitle, explicit, cover } = Astro.props;
 
 import ListenOnMenu from "./listenOnMenu.astro";
 import FollowUsMenu from "./followUsMenu.astro";
@@ -8,6 +8,7 @@ import RssIcon from "../icons/rssIcon.astro";
 import HeartIcon from "../icons/heartIcon.astro";
 
 const explicitLabel = (explicit === undefined) ? astropodConf.explicit : explicit;
+let cover_url = cover ? cover : astropodConf.cover;
 ---
 
 <div class="card min-w-full bg-base-100 shadow-md md:pb-3">
@@ -32,7 +33,7 @@ const explicitLabel = (explicit === undefined) ? astropodConf.explicit : explici
     </div>
     <img
       class="-mt-28 mx-6 md:-mt-28 border-4 z-10 relative border-base-100 rounded-lg md:mx-11 w-24 h-24 md:h-40 md:w-40"
-      src={astropodConf.cover}
+      src={cover_url}
     />
   </div>
 
