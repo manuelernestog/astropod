@@ -5,6 +5,10 @@ import { getCollection } from "astro:content";
 import astropodConfig from "../../astropod.config.json";
 import HeaderCard from "../components/headerCard/HeaderCard.astro";
 import AudioPlayer from "../components/audioPlayer.astro";
+import PlainTextRenderer from "marked-plaintext";
+import marked from "marked";
+
+const renderer = new PlainTextRenderer();
 
 const posts = (await getCollection("episode")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
@@ -20,7 +24,7 @@ const last_posts = posts.slice(0, 3);
         <HorizontalCard
           title={post.data.title}
           img={post.data.cover}
-          desc={post.body.slice(0, 200)}
+          desc={marked.parse(post.body.slice(0, 200), { renderer: renderer })}
           url={"/episode/" + post.slug}
           audioUrl={post.data.audioUrl}
           pubDate={post.data.pubDate}

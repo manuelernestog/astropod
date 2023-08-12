@@ -1,11 +1,13 @@
 ---
-const { title, subtitle } = Astro.props;
 import astropodConf from "../../../astropod.config.json";
+const { title, subtitle, explicit } = Astro.props;
 
 import ListenOnMenu from "./listenOnMenu.astro";
 import FollowUsMenu from "./followUsMenu.astro";
 import RssIcon from "../icons/rssIcon.astro";
 import HeartIcon from "../icons/heartIcon.astro";
+
+console.log(explicit);
 ---
 
 <div class="card min-w-full bg-base-100 shadow-md md:pb-3">

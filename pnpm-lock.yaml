@@ -32,6 +32,9 @@ dependencies:
   marked:
     specifier: ^7.0.2
     version: 7.0.2
+  marked-plaintext:
+    specifier: ^0.0.2
+    version: 0.0.2
   sharp:
     specifier: ^0.32.1
     version: 0.32.1
@@ -2536,6 +2539,10 @@ packages:
 
   /markdown-table@3.0.3:
     resolution: {integrity: sha512-Z1NL3Tb1M9wH4XESsCDEksWoKTdlUafKc4pt0GRwjUyXaCFZ+dc3g2erqB6zm3szA2IUSi7VnPI+o/9jnxh9hw==}
+    dev: false
+
+  /marked-plaintext@0.0.2:
+    resolution: {integrity: sha512-6u/EfbyqTV8p9CqxFUOK3RUGo1KGULVUaiacKRjb+9VzXpGYYQlgff76xjlfxOGYpsDkzYg+l28CtGd86I6c0w==}
     dev: false
 
   /marked@7.0.2:
