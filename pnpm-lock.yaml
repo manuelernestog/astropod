@@ -29,6 +29,9 @@ dependencies:
   dayjs:
     specifier: ^1.11.9
     version: 1.11.9
+  marked:
+    specifier: ^7.0.2
+    version: 7.0.2
   sharp:
     specifier: ^0.32.1
     version: 0.32.1
@@ -2533,6 +2536,12 @@ packages:
 
   /markdown-table@3.0.3:
     resolution: {integrity: sha512-Z1NL3Tb1M9wH4XESsCDEksWoKTdlUafKc4pt0GRwjUyXaCFZ+dc3g2erqB6zm3szA2IUSi7VnPI+o/9jnxh9hw==}
+    dev: false
+
+  /marked@7.0.2:
+    resolution: {integrity: sha512-ADEBjnCHOrsLoV7JPvUNWtELZ0b4SeIALhrfxuA9uhS3hw2PCezROoFduIqMOjeagBPto732+YC5tZHBMQRdqg==}
+    engines: {node: '>= 16'}
+    hasBin: true
     dev: false
 
   /mdast-util-definitions@5.1.2:

@@ -1,6 +1,9 @@
 import xml2js from "xml2js";
 import dayjs from "dayjs";
 import astropodConfig from "../../astropod.config.json";
+import { getCollection } from "astro:content";
+const episode = await getCollection("episode");
+import { marked } from "marked";
 
 import { APIContext } from "astro";
 
@@ -108,6 +111,15 @@ export async function get(context) {
     };
   }
 
+  const items = episode.map((episode) => ({
+    title: cdata(episode.data.title),
+    description: cdata(marked.parse(episode.body)),
+    pubDate: dayjs(episode.data.pubDate).format("ddd, DD MMM YYYY hh:mm:ss ZZ"),
+    link: `${astropodConfig.link}/episode/${episode.slug}/`,
+  }));
+
+  podcast.rss.channel[0].item = items;
+
   let builder = new xml2js.Builder();
   let xml = builder.buildObject(podcast);
 
@@ -127,19 +139,3 @@ function isFullUrl(urlString) {
     return false;
   }
 }
-
-// import rss from "@astrojs/rss";
-// import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
-// import { getCollection } from "astro:content";
-// const episode = await getCollection("episode");
-// return rss({
-//   title: SITE_TITLE,
-//   description: SITE_DESCRIPTION,
-//   site: import.meta.env.SITE,
-//   items: episode.map((episode) => ({
-//     title: episode.data.title,
-//     pubDate: episode.data.pubDate,
-//     description: episode.data.description,
-//     link: `/episode/${episode.slug}/`,
-//   })),
-// });
