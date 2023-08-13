@@ -1,11 +1,49 @@
+---
+const { page } = Astro.props;
+
+function getPagination(current, last, size) {
+  const offset = Math.floor(size / 2);
+  const toEnd = last - current;
+  const leftOffset = current + offset;
+  const start = current <= offset ? 1 : toEnd < offset ? current - (offset - toEnd + offset) : current - offset;
+  const end = offset >= toEnd ? last : current <= offset ? leftOffset + (offset - (current - 1)) : leftOffset;
+  
+  let pagination = [];
+  for (let i = start; i <= end; i++) pagination.push(i);
+  return pagination;
+}
+
+const pagination = getPagination(page.currentPage, page.lastPage, 5);
+---
+
 <div class="w-full mt-8 flex justify-center">
-    <div class="join bg-base-100 shadow-md">
-      <button class="join-item btn bg-base-100">«</button>
-      <button class="join-item btn bg-base-100">1</button>
-      <button class="join-item btn bg-base-100">2</button>
-      <button class="join-item btn btn-active">3</button>
-      <button class="join-item btn bg-base-100">4</button>
-      <button class="join-item btn bg-base-100">5</button>
-      <button class="join-item btn bg-base-100">»</button>
-    </div>
+  <div class="join bg-base-100 shadow-md">
+    {
+      page.url.prev && (
+        <a href={page.url.prev} class="join-item btn bg-base-100">
+          «
+        </a>
+      )
+    }
+
+    {
+      pagination.map((item) => (
+        <a href={`/${item}`} class="join-item btn bg-base-100">
+          {item}
+        </a>
+      ))
+    }
+
+    <!-- <button class="join-item btn bg-base-100">1</button>
+    <button class="join-item btn bg-base-100">2</button>
+    <button class="join-item btn btn-active">3</button>
+    <button class="join-item btn bg-base-100">4</button>
+    <button class="join-item btn bg-base-100">5</button> -->{
+      page.url.next && (
+        <a href={page.url.next} class="join-item btn bg-base-100">
+          »
+        </a>
+      )
+    }
   </div>
+</div>
