@@ -5,8 +5,6 @@ import { getCollection } from "astro:content";
 const episode = await getCollection("episode");
 import { marked } from "marked";
 
-import { APIContext } from "astro";
-
 const lastBuildDate = dayjs().format("ddd, DD MMM YYYY hh:mm:ss ZZ");
 const cover = isFullUrl(astropodConfig.cover) ? astropodConfig.cover : astropodConfig.link + astropodConfig.cover;
 
@@ -60,33 +58,6 @@ export async function get(context) {
               },
             },
           ],
-          // item: [
-          //   {
-          //     title: ["Episode Title"],
-          //     "itunes:author": ["Author Name"],
-          //     "itunes:subtitle": ["A short description of the episode"],
-          //     "itunes:summary": ["A full description of the episode"],
-          //     "itunes:image": [
-          //       {
-          //         $: {
-          //           href: "http://www.podcastwebsite.com/episode.jpg",
-          //         },
-          //       },
-          //     ],
-          //     enclosure: [
-          //       {
-          //         $: {
-          //           url: "http://www.podcastwebsite.com/episode.mp3",
-          //           length: "12345678",
-          //           type: "audio/mpeg",
-          //         },
-          //       },
-          //     ],
-          //     guid: ["http://www.podcastwebsite.com/episode.mp3"],
-          //     pubDate: ["Tue, 07 Feb 2012 00:00:00 GMT"],
-          //     "itunes:duration": ["00:45:00"],
-          //   },
-          // ],
         },
       ],
     },
