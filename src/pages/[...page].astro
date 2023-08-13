@@ -6,13 +6,17 @@ import astropodConfig from "../../astropod.config.json";
 import HeaderCard from "../components/headerCard/HeaderCard.astro";
 import AudioPlayer from "../components/audioPlayer.astro";
 import PlainTextRenderer from "marked-plaintext";
-import {marked} from "marked";
+import { marked } from "marked";
+import Pagination from "../components/pagination.astro";
 
 const renderer = new PlainTextRenderer();
 
-const posts = (await getCollection("episode")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
-const last_posts = posts.slice(0, 3);
+export async function getStaticPaths({ paginate }) {
+  const episodes = await getCollection("episode");
+  episodes.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  return paginate(episodes, { pageSize: 2 });
+}
+const { page } = Astro.props;
 ---
 
 <BaseLayout>
@@ -20,20 +24,21 @@ const last_posts = posts.slice(0, 3);
 
   <div class="card min-w-full bg-base-100 shadow-md p-3 pb-3 mt-12">
     {
-      last_posts.map((post, index) => (
+      page.data.map((episode, index) => (
         <HorizontalCard
-          title={post.data.title}
-          cover={post.data.cover}
-          desc={marked.parse(post.body.slice(0, 200), { renderer: renderer })}
-          url={"/episode/" + post.slug}
-          audioUrl={post.data.audioUrl}
-          pubDate={post.data.pubDate}
-          duration={post.data.duration}
+          title={episode.data.title}
+          cover={episode.data.cover}
+          desc={marked.parse(episode.body.slice(0, 200), { renderer: renderer })}
+          url={"/episode/" + episode.slug}
+          audioUrl={episode.data.audioUrl}
+          pubDate={episode.data.pubDate}
+          duration={episode.data.duration}
           id={"card-" + index}
         />
       ))
     }
   </div>
+  <Pagination />
 </BaseLayout>
 
 <AudioPlayer />
