@@ -4,7 +4,7 @@ import { episodeSchema } from "../../content/config";
 import EpisodeLayout from "../../layouts/EpisodeLayout.astro";
 import AudioPlayer from "../../components/audioPlayer.astro";
 import PlainTextRenderer from "marked-plaintext";
-import {marked} from "marked";
+import { marked } from "marked";
 
 export async function getStaticPaths() {
   const postEntries = await getCollection("episode");
@@ -42,10 +42,14 @@ const description = marked.parse(entry.body.slice(0, 200), { renderer: renderer 
 <script define:vars={{ episode }}>
 const musicPlayer = document.getElementById("audio-player-container");
 const audioDownloadLink = document.getElementById("audio-download-link");
+const audioControl = document.getElementById("audio-control");
+const audioLoading = document.getElementById("audio-loading");
 
-  musicPlayer?.classList.remove("hidden", "opacity-0");
-  musicPlayer?.classList.add("flex");
-  const audio = document.querySelector("audio");
-  audio.src = episode.audioUrl;
-  audioDownloadLink.href = episode.audioUrl;
+musicPlayer?.classList.remove("hidden", "opacity-0");
+musicPlayer?.classList.add("flex");
+const audio = document.querySelector("audio");
+audio.src = episode.audioUrl;
+audioLoading?.classList.remove("hidden");
+audioControl?.classList.add("hidden");
+audioDownloadLink.href = episode.audioUrl;
 </script>

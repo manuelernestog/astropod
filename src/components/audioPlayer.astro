@@ -11,7 +11,8 @@ import AudioMutedIcon from "./icons/audioMutedIcon.astro";
   class="w-full z-20 bottom-0 sticky bg-base-100 px-5 h-16 items-center transition-opacity hidden opacity-0 duration-500"
 >
   <audio src="" preload="metadata"></audio>
-  <label class="swap">
+  <span id="audio-loading" class="loading loading-spinner loading-md hidden"></span>
+  <label id="audio-control" class="swap hidden">
     <input type="checkbox" id="play-icon" />
     <div id="play-icon-svg" class="swap-off">
       <PlayIcon />
@@ -66,6 +67,8 @@ import AudioMutedIcon from "./icons/audioMutedIcon.astro";
 <script>
   const playIconContainer = document.getElementById("play-icon");
   const muteIconContainer = document.getElementById("mute-icon");
+  const audioControl = document.getElementById("audio-control");
+  const audioLoading = document.getElementById("audio-loading");
   const audioDownloadLink = document.getElementById("audio-download-link");
   const musicPlayer = document.getElementById("audio-player-container");
 
@@ -87,10 +90,14 @@ import AudioMutedIcon from "./icons/audioMutedIcon.astro";
 
   if (audio.readyState > 0) {
     displayDuration();
+    audioLoading?.classList.add("hidden");
+    audioControl?.classList.remove("hidden");
   } else {
     audio.addEventListener("loadedmetadata", () => {
       displayDuration();
       seekSlider?.setAttribute("max", audio.duration);
+      audioLoading?.classList.add("hidden");
+      audioControl?.classList.remove("hidden");
     });
   }
 
@@ -127,6 +134,10 @@ import AudioMutedIcon from "./icons/audioMutedIcon.astro";
         musicPlayer?.classList.remove("hidden");
         musicPlayer?.classList.add("flex");
         setTimeout(() => musicPlayer?.classList.remove("opacity-0"), 100);
+        audioLoading?.classList.remove("hidden");
+        audioControl?.classList.add("hidden");
+        durationContainer.textContent = "0:00"
+        currentTimeContainer.textContent = "0:00"
         audio.src = btn.dataset.audioUrl;
         audioDownloadLink.href = btn.dataset.audioUrl;
         disableOthersPlayButtons(btn.id, playButtons);
