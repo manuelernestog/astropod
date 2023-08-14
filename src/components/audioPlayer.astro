@@ -130,14 +130,14 @@ import AudioMutedIcon from "./icons/audioMutedIcon.astro";
 
   playButtons.forEach(function (btn) {
     btn.addEventListener("click", () => {
-      if (new URL(audio.src).pathname != btn.dataset.audioUrl) {
+      if (!audio.src.includes(btn.dataset.audioUrl)) {
         musicPlayer?.classList.remove("hidden");
         musicPlayer?.classList.add("flex");
         setTimeout(() => musicPlayer?.classList.remove("opacity-0"), 100);
         audioLoading?.classList.remove("hidden");
         audioControl?.classList.add("hidden");
-        durationContainer.textContent = "0:00"
-        currentTimeContainer.textContent = "0:00"
+        durationContainer.textContent = "0:00";
+        currentTimeContainer.textContent = "0:00";
         audio.src = btn.dataset.audioUrl;
         audioDownloadLink.href = btn.dataset.audioUrl;
         disableOthersPlayButtons(btn.id, playButtons);
