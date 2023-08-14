@@ -7,6 +7,7 @@ export default function dcapconfig() {
   const config = {
     backend: {
       name: "astropod",
+      repo: "manuelernestog/astropod",
       branch: "main",
     },
     collections: [

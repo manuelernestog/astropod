@@ -10,7 +10,7 @@ import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astrofy-template.netlify.app",
+  site: "https://astropod.netlify.app",
   integrations: [
     mdx(),
     sitemap(),
