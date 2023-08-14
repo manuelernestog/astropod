@@ -9,7 +9,7 @@ const episodeSchema = z.object({
     episode: z.number().optional(),
     season: z.number().optional(),
     episodeType: z.string().optional(),
-    duration: z.string(), //duration in formar hh:mm:ss
+    duration: z.coerce.string(), //duration in formar hh:mm:ss
     size: z.number(), // size in megabytes
 });
 
