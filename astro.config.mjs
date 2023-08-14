@@ -21,7 +21,7 @@ export default defineConfig({
       logLevel: "debug",
     }),
     NetlifyCMS({
-      config: dcapConfig,
+      config: dcapConfig(),
     }),
   ],
 });
