@@ -1,2 +1,2 @@
 # Astropod
-Host your podcast for free on github pages.
+Host your serverless podcast for free with Astropod.
