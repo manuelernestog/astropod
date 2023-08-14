@@ -6,8 +6,7 @@ import themes from "./src/helpers/themes.json";
 export default function dcapconfig() {
   const config = {
     backend: {
-      name: "astropod",
-      repo: "manuelernestog/astropod",
+      name: "git-gateway",
       branch: "main",
     },
     collections: [
