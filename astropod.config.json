@@ -14,7 +14,8 @@
   "theme": "",
   "fundingUrl": "/donate",
   "fundingText": "Support Us",
-  "pageSize": 10,
+  "pageSize": 15,
+  "feedSize": "",
   "listenOn": {
     "spotify": "",
     "googlePodcast": "",

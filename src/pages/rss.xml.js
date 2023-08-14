@@ -2,7 +2,10 @@ import xml2js from "xml2js";
 import dayjs from "dayjs";
 import astropodConfig from "../../astropod.config.json";
 import { getCollection } from "astro:content";
-const episode = await getCollection("episode");
+let episode = await getCollection("episode");
+episode.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+if (astropodConfig.feedSize) episode = episode.slice(0, astropodConfig.feedSize);
+
 import { marked } from "marked";
 
 const lastBuildDate = dayjs().format("ddd, DD MMM YYYY hh:mm:ss ZZ");
