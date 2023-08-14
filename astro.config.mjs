@@ -157,7 +157,6 @@ export default defineConfig({
             ],
           },
         ],
-        disableIdentityWidgetInjection: true,
       },
     }),
   ],
