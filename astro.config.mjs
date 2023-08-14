@@ -3,7 +3,7 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import NetlifyCMS from "astro-netlify-cms";
-import dcapConfig from '.decap.config.mjs'
+import dcapConfig from './decap.config.mjs'
 
 // https://astro.build/config
 import image from "@astrojs/image";
@@ -21,7 +21,7 @@ export default defineConfig({
       logLevel: "debug",
     }),
     NetlifyCMS({
-      config: dcapConfig,
+      config: dcapConfig(),
     }),
   ],
 });
