@@ -102,6 +102,36 @@ export default function dcapconfig() {
               { name: "fundingText", widget: "string", label: "Funding Text", required: false },
             ],
           },
+          {
+            name: "listenOn",
+            label: "Listen On",
+            file: ".astropod/listenOn.config.json",
+            fields: [
+              { "name": "spotify", "widget": "string", "label": "Spotify" },
+              { "name": "googlePodcast", "widget": "string", "label": "Google Podcast" },
+              { "name": "applePodcast", "widget": "string", "label": "Apple Podcast" },
+              { "name": "easyPodcast", "widget": "string", "label": "Easy Podcast" },
+              { "name": "amazonMusic", "widget": "string", "label": "Amazon Music" },
+              { "name": "fountain", "widget": "string", "label": "Fountain" },
+              { "name": "ivoox", "widget": "string", "label": "iVoox" },
+              { "name": "pocketcasts", "widget": "string", "label": "Pocket Casts" },
+              { "name": "deezer", "widget": "string", "label": "Deezer" }
+            ]
+          },
+          {
+            name: "follow",
+            label: "Social Links",
+            file: ".astropod/social.config.json",
+            fields: [
+              { "name": "facebook", "widget": "string", "label": "Facebook" },
+              { "name": "twitter", "widget": "string", "label": "Twitter" },
+              { "name": "youtube", "widget": "string", "label": "YouTube" },
+              { "name": "instagram", "widget": "string", "label": "Instagram" },
+              { "name": "telegram", "widget": "string", "label": "Telegram" },
+              { "name": "linkedin", "widget": "string", "label": "LinkedIn" },
+              { "name": "newsletter", "widget": "string", "label": "Newsletter" }
+            ]
+          },
         ],
       },
     ],
