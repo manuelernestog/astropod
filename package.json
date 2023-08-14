@@ -1,8 +1,9 @@
 {
-  "name": "astrofy",
-  "description": "Astrofy is a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS. Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed.",
+  "name": "astropod",
+  "description": "Astropod is a free and open-source serverless podcast template. Host your podcast for free using online third-party services.", 
   "type": "module",
-  "version": "2.5.1",
+  "author": "Manuel Ernesto Garcia",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "astro dev",
