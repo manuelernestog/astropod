@@ -5,7 +5,7 @@ import astropodConfig from "../../astropod.config.json";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 
-const { image, title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
+const { image, title = astropodConfig.name, description = astropodConfig.description } = Astro.props;
 ---
 
 <!DOCTYPE html>
