@@ -1,5 +1,5 @@
 ---
-import astropodConfig from "../../../.astropod/astropod.config.json";
+import listenOn from "../../../.astropod/listenOn.config.json";
 import GooglePodcastIcon from "../icons/googlePodcastIcon.astro";
 import SpotifyIcon from "../icons/spotifyIcon.astro";
 import ApplePodcastIcon from "../icons/applePodcastIcon.astro";
@@ -11,7 +11,6 @@ import FountainIcon from "../icons/fountainIcon.astro";
 import DeezerIcon from "../icons/deezerIcon.astro";
 import EasyPodcastIcon from "../icons/easyPodcastIcon.astro";
 
-const listenOn = astropodConfig.listenOn;
 let hasListenOn = false 
 
 for (const key in listenOn) {

@@ -15,25 +15,5 @@
   "fundingUrl": "/donate",
   "fundingText": "Support Us",
   "pageSize": 15,
-  "feedSize": "",
-  "listenOn": {
-    "spotify": "",
-    "googlePodcast": "",
-    "applePodcast": "",
-    "easyPodcast": "",
-    "amazonMusic": "",
-    "fountain": "",
-    "ivoox": "",
-    "pocketcasts": "",
-    "deezer": ""
-  },
-  "social": {
-    "facebook": "",
-    "twitter": "https://twitter.com/manuelernestog",
-    "youtube": "",
-    "instagram": "",
-    "telegram": "",
-    "linkedin": "https://www.linkedin.com/in/manuelernestogr",
-    "newsletter": ""
-  }
+  "feedSize": ""
 }

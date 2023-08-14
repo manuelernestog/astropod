@@ -1,16 +1,16 @@
 ---
-import astropodConfig from "../../../.astropod/astropod.config.json";
+import social from "../../../.astropod/social.config.json";
 import TwitterIcon from "../icons/twitterIcon.astro";
 import YoutubeIcon from "../icons/youtubeIcon.astro";
 import TelegramIcon from "../icons/telegramIcon.astro";
 import FacebookIcon from "../icons/facebookIcon.astro";
 import InstagramIcon from "../icons/instagramIcon.astro";
 import NewsletterIcon from "../icons/newsletterIcon.astro";
+import LinkedinIcon from "../icons/linkedinIcon.astro";
 
 
 import ExternalLinkIcon from "../icons/externalLinkIcon.astro";
 
-const social = astropodConfig.social;
 let hasSocial = false 
 
 for (const key in social) {
@@ -32,6 +32,7 @@ for (const key in social) {
     {social.twitter && (<li><a href={social.twitter}><TwitterIcon />Twitter</a></li>)}
     {social.youtube && (<li><a href={social.youtube}><YoutubeIcon />Youtube</a></li>)}
     {social.telegram && (<li><a href={social.telegram}><TelegramIcon />Telegram</a></li>)}
+    {social.linkedin && (<li><a href={social.linkedin}><LinkedinIcon />Linkedin</a></li>)}
     {social.newsletter && (<li><a href={social.newsletter}><NewsletterIcon />Newsletter</a></li>)}
   </ul>
 </div>
