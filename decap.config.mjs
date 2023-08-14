@@ -1,4 +1,6 @@
 import astropodConfig from "./astropod.config.json";
+import languageList from "./src/helpers/languagesList.json";
+import podcastMainCategories from "./src/helpers/podcastMainCategories.json";
 
 export default function dcapconfig() {
   const config = {
@@ -12,7 +14,7 @@ export default function dcapconfig() {
         label: "Episodes",
         label_singular: "Episode",
         folder: "src/content/episode",
-        sortable_fields: ['title', 'pubDate', 'episode','season'],
+        sortable_fields: ["title", "pubDate", "episode", "season"],
         create: true,
         delete: true,
         fields: [
@@ -52,10 +54,41 @@ export default function dcapconfig() {
         label: "Settings",
         files: [
           {
-            name: "podcast",
-            label: "Podcast",
+            name: "general",
+            label: "General",
             file: "astropod.config.json",
-            fields: [{ name: "name", widget: "string", label: "Name" }],
+            fields: [
+              { name: "name", widget: "string", label: "Name" },
+              { name: "description", widget: "text", label: "Description" },
+              { name: "link", widget: "string", label: "Link" },
+              { name: "cover", widget: "image", label: "Cover" },
+              { name: "banner", widget: "image", label: "Banner" },
+              { name: "author", widget: "string", label: "Author" },
+              {
+                name: "email",
+                widget: "string",
+                label: "email",
+                pattern: ["^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$", "Please enter a valid email address"],
+              },
+              { name: "owner", widget: "string", label: "Owner", required: false },
+              { name: "copyright", widget: "string", label: "Copyright", required: false },
+              {
+                name: "language",
+                widget: "select",
+                label: "Language",
+                default: "en",
+                options: languageList,
+              },
+              { name: "explicit", widget: "boolean", label: "Explicit", default: false },
+              {
+                name: "category",
+                widget: "select",
+                label: "Category",
+                multiple: true,
+                options: podcastMainCategories,
+                max: 3
+              },
+            ],
           },
         ],
       },

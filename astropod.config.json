@@ -1,32 +1,21 @@
 {
-  "name": "Astropod | Free Serverless Podcast",
-  "description": "Astropod is an open-source template for host your podcast for free using serverless model.",
-  "link": "https://astropod.com",
-  "cover": "/cover.webp",
-  "banner": "/banner.webp",
-  "author": "Manuel Ernesto Garcia",
-  "owner": "Manuel Ernesto Garcia",
-  "copyright": "Manuel Ernesto Garcia",
-  "email": "contact.manuelernestog@gmail.com",
-  "language": "en",
-  "explicit": false,
-  "category": "Technology",
-  "theme": "",
-  "fundingUrl": "/donate",
-  "fundingText": "Support Us",
-  "pageSize": 15,
-  "feedSize": "",
   "listenOn": {
-    "spotify": "",
-    "googlePodcast": "",
-    "applePodcast": "",
-    "easyPodcast": "",
     "amazonMusic": "",
-    "fountain": "",
+    "easyPodcast": "",
+    "deezer": "",
+    "applePodcast": "",
     "ivoox": "",
-    "pocketcasts": "",
-    "deezer": ""
+    "googlePodcast": "",
+    "fountain": "",
+    "spotify": "",
+    "pocketcasts": ""
   },
+  "copyright": "Manuel Ernesto Garcia",
+  "theme": "",
+  "fundingText": "Support Us",
+  "author": "Manuel Ernesto Garcia",
+  "name": "Astropod | Free Serverless Podcast",
+  "banner": "/banner.webp",
   "social": {
     "facebook": "",
     "twitter": "https://twitter.com/manuelernestog",
@@ -35,5 +24,20 @@
     "telegram": "",
     "linkedin": "https://www.linkedin.com/in/manuelernestogr",
     "newsletter": ""
-  }
+  },
+  "pageSize": 15,
+  "fundingUrl": "/donate",
+  "owner": "Manuel Ernesto Garcia",
+  "explicit": false,
+  "cover": "/cover.webp",
+  "language": "en",
+  "link": "https://astropod.com",
+  "email": "contact.manuelernestog@gmail.com",
+  "description": "Astropod is an open-source template for host your podcast for free using serverless model.",
+  "category": [
+    "Technology",
+    "Business",
+    "Kids &amp; Family"
+  ],
+  "feedSize": ""
 }

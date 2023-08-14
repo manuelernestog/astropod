@@ -66,14 +66,18 @@ export async function get(context) {
     },
   };
 
-  if (astropodConfig.category) {
-    podcast.rss.channel[0].category = astropodConfig.category;
-    podcast.rss.channel[0]["itunes:category"] = {
-      $: {
-        text: astropodConfig.category,
-      },
-    };
-  }
+  podcast.rss.channel[0].category = astropodConfig.category.map((category) => category);
+  podcast.rss.channel[0]["itunes:category"] = astropodConfig.category.map((category) => ({
+    $: {
+      text: category,
+    },
+  }));
+
+  // podcast.rss.channel[0]["itunes:category"] = {
+  //   $: {
+  //     text: astropodConfig.category,
+  //   },
+  // };
 
   if (astropodConfig.fundingUrl) {
     const fundingUrl = isFullUrl(astropodConfig.fundingUrl)

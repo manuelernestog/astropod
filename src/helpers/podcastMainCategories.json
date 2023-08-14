@@ -1,0 +1,21 @@
+[
+  { "label": "Arts", "value": "Arts" },
+  { "label": "Business", "value": "Business" },
+  { "label": "Comedy", "value": "Comedy" },
+  { "label": "Education", "value": "Education" },
+  { "label": "Fiction", "value": "Fiction" },
+  { "label": "Government", "value": "Government" },
+  { "label": "History", "value": "History" },
+  { "label": "Health & Fitness", "value": "Health &amp; Fitness" },
+  { "label": "Kids & Family", "value": "Kids &amp; Family" },
+  { "label": "Leisure", "value": "Leisure" },
+  { "label": "Music", "value": "Music" },
+  { "label": "News", "value": "News" },
+  { "label": "Religion & Spirituality", "value": "Religion &amp; Spirituality" },
+  { "label": "Science", "value": "Science" },
+  { "label": "Society & Culture", "value": "Society &amp; Culture" },
+  { "label": "Sports", "value": "Sports" },
+  { "label": "Technology", "value": "Technology" },
+  { "label": "True Crime", "value": "True &amp; Crime" },
+  { "label": "TV & Film", "value": "TV &amp; Film" }
+]
