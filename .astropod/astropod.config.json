@@ -1,0 +1,39 @@
+{
+  "name": "Astropod | Free Serverless Podcast",
+  "description": "Astropod is an open-source template for host your podcast for free using serverless model.",
+  "link": "https://astropod.com",
+  "cover": "/cover.webp",
+  "banner": "/banner.webp",
+  "author": "Manuel Ernesto Garcia",
+  "owner": "Manuel Ernesto Garcia",
+  "copyright": "Manuel Ernesto Garcia",
+  "email": "contact.manuelernestog@gmail.com",
+  "language": "en",
+  "explicit": false,
+  "category": ["Technology"],
+  "theme": "light",
+  "fundingUrl": "/donate",
+  "fundingText": "Support Us",
+  "pageSize": 15,
+  "feedSize": "",
+  "listenOn": {
+    "spotify": "",
+    "googlePodcast": "",
+    "applePodcast": "",
+    "easyPodcast": "",
+    "amazonMusic": "",
+    "fountain": "",
+    "ivoox": "",
+    "pocketcasts": "",
+    "deezer": ""
+  },
+  "social": {
+    "facebook": "",
+    "twitter": "https://twitter.com/manuelernestog",
+    "youtube": "",
+    "instagram": "",
+    "telegram": "",
+    "linkedin": "https://www.linkedin.com/in/manuelernestogr",
+    "newsletter": ""
+  }
+}

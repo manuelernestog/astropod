@@ -5,7 +5,7 @@ import EpisodeLayout from "../../layouts/EpisodeLayout.astro";
 import AudioPlayer from "../../components/audioPlayer.astro";
 import PlainTextRenderer from "marked-plaintext";
 import { marked } from "marked";
-import astropodConfig from "../../../astropod.config.json";
+import astropodConfig from "../../../.astropod/astropod.config.json";
 
 export async function getStaticPaths() {
   const postEntries = await getCollection("episode");

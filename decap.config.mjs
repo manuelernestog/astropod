@@ -1,6 +1,7 @@
-import astropodConfig from "./astropod.config.json";
+import astropodConfig from "./.astropod/astropod.config.json";
 import languageList from "./src/helpers/languagesList.json";
 import podcastMainCategories from "./src/helpers/podcastMainCategories.json";
+import themes from "./src/helpers/themes.json";
 
 export default function dcapconfig() {
   const config = {
@@ -62,7 +63,6 @@ export default function dcapconfig() {
               { name: "description", widget: "text", label: "Description" },
               { name: "link", widget: "string", label: "Link" },
               { name: "cover", widget: "image", label: "Cover" },
-              { name: "banner", widget: "image", label: "Banner" },
               { name: "author", widget: "string", label: "Author" },
               {
                 name: "email",
@@ -88,6 +88,31 @@ export default function dcapconfig() {
                 options: podcastMainCategories,
                 max: 3
               },
+              { name: "fundingUrl", widget: "string", label: "Funding Url", required: false },
+              { name: "fundingText", widget: "string", label: "Funding Text", required: false },
+              { name: "feedSize", widget: "number", label: "Feed Size (Empty for include all episodes)", required: false },
+              { name: "pageSize", widget: "number", label: "Episodes per page" },
+              {
+                name: "theme",
+                widget: "select",
+                label: "Theme",
+                options: themes,
+              },
+            ],
+          },
+          {
+            name: "website",
+            label: "Website",
+            file: "astropod.config.json2",
+            fields: [
+              {
+                name: "theme",
+                widget: "select",
+                label: "Theme",
+                options: themes,
+              },
+              { name: "banner", widget: "image", label: "Banner" },
+              { name: "pageSize", widget: "number", label: "Episodes per page" },
             ],
           },
         ],
