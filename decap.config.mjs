@@ -5,7 +5,7 @@ import themes from "./src/helpers/themes.json";
 
 export default function dcapconfig() {
   const config = {
-    logo_url: "/banner.webp",
+    logo_url: "",
     backend: {
       name: "git-gateway",
       branch: "main",
