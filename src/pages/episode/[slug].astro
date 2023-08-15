@@ -28,7 +28,7 @@ const description = marked.parse(entry.body.slice(0, 200), { renderer: renderer 
 ---
 
 <EpisodeLayout
-  title={`${episode.title} - ${astropodConfig.name}`}
+  title={episode.title}
   pubDate={episode.pubDate}
   cover={episode.cover}
   explicit={episode.explicit}

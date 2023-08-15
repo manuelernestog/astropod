@@ -10,7 +10,7 @@ dayjs.extend(localizedFormat);
 const displayDate = dayjs(pubDate).format("ll");
 ---
 
-<BaseLayout title={title} description={description} image={cover}>
+<BaseLayout title={`${title} - ${astropodConfig.name}`} description={description} image={cover}>
   <HeaderCard title={title} subtitle={astropodConfig.name} cover={cover} explicit={explicit} />
 
   <main class="md:flex md:justify-center">
