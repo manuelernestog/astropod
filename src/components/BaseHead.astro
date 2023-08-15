@@ -2,18 +2,18 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 export interface Props {
-	title: string;
-	description: string;
-	image?: string;
+  title: string;
+  description: string;
+  image?: string;
 }
 
-const { title, description, image = '/social_img.png' } = Astro.props;
+const { title, description, image } = Astro.props;
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/svg+xml" href="astropod/favicon.svg" />
 <meta name="generator" content={Astro.generator} />
 
 <!-- Primary Meta Tags -->
