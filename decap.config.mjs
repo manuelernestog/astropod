@@ -63,8 +63,8 @@ export default function dcapconfig() {
               { name: "name", widget: "string", label: "Name" },
               { name: "description", widget: "text", label: "Description" },
               { name: "link", widget: "string", label: "Link" },
-              { name: "cover", widget: "image", label: "Cover" },
-              { name: "banner", widget: "image", label: "Banner" },
+              { name: "cover", widget: "image", label: "Cover | Recomended Size 1400x1400" },
+              { name: "banner", widget: "image", label: "Banner | Recomended Size 960x320" },
               { name: "favicon", widget: "image", label: "Favicon" },
 
               { name: "author", widget: "string", label: "Author" },
@@ -95,7 +95,7 @@ export default function dcapconfig() {
               {
                 name: "theme",
                 widget: "select",
-                label: "Theme",
+                label: "Web Site Theme",
                 options: themes,
               },
               { name: "pageSize", widget: "number", label: "Episodes per page" },
