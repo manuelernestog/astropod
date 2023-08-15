@@ -10,6 +10,26 @@ import PauseIcon from "./icons/pauseIcon.astro";
 
 let cover_url = cover ? cover : astropodConfig.cover;
 const displayDate = dayjs(pubDate).format("ll");
+
+function formatTime(seconds) {
+  if (isNaN(seconds) || seconds < 0) return null;
+
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor((seconds % 3600) / 60);
+  const remainingSeconds = seconds % 60;
+
+  const formattedHours = hours < 10 ? `0${hours}` : hours;
+  const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+  const formattedSeconds = remainingSeconds < 10 ? `0${remainingSeconds}` : remainingSeconds;
+
+  if (hours > 0) {
+    return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+  } else {
+    return `${formattedMinutes}:${formattedSeconds}`;
+  }
+}
+
+const displayDuration = formatTime(duration);
 ---
 
 <div class="episode-card">
@@ -23,7 +43,7 @@ const displayDate = dayjs(pubDate).format("ll");
           {title}
         </h2>
         <p class="text-sm font-medium opacity-60">
-          {duration && duration + " • "}
+          {duration && displayDuration + " • "}
           {displayDate}
         </p>
         <p class="my-1 text-xs md:text-sm line-clamp-2">{desc}</p>
