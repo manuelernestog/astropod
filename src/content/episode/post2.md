@@ -3,7 +3,7 @@ title: "Demo Post 2"
 audioUrl: "https://archive.org/download/karbonaized-genera-capturas-de-tu-codigo/Karbonaized%20-%20Genera%20capturas%20de%20tu%20Codigo.ogg"
 cover: ""
 pubDate: "Sep 11 2022"
-duration: "3:40"
+duration: 3:40
 size: 20
 episode: 2
 season: 1

@@ -5,7 +5,7 @@ import themes from "./src/helpers/themes.json";
 
 export default function dcapconfig() {
   const config = {
-    logo_url: "",
+    logo_url: "/astropod/dashboardBanner.svg",
     backend: {
       name: "git-gateway",
       branch: "main",
