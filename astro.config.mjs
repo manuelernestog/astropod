@@ -4,13 +4,14 @@ import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import NetlifyCMS from "astro-netlify-cms";
 import dcapConfig from './decap.config.mjs'
+import astropodConfig from './.astropod/astropod.config.json'
 
 // https://astro.build/config
 import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astropod.netlify.app",
+  site: astropodConfig.site,
   integrations: [
     mdx(),
     sitemap(),
