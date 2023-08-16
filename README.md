@@ -2,7 +2,7 @@
 
 ![Atropod](https://github.com/manuelernestog/manuelernestog/assets/53962116/3106bf65-37f9-427f-9b50-72d7ae22752f)
 
-Astropod is a free and open-source file base serverless podcast hosting solution. It supports diverse deployment services and audio hosting options and includes a customizable website deployable in a few clicks, with a personalized domain and a user-friendly CMS for effortless podcast management.
+Astropod is a free and open-source self-hosting serverless podcast solution. It supports diverse deployment services and audio hosting options and includes a customizable website deployable in a few clicks, with a personalized domain and a user-friendly CMS for effortless podcast management.
 
 ---
 
