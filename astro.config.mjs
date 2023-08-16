@@ -5,6 +5,8 @@ import tailwind from "@astrojs/tailwind";
 import NetlifyCMS from "astro-netlify-cms";
 import dcapConfig from './decap.config.mjs'
 import astropodConfig from './.astropod/astropod.config.json'
+import robotsTxt from 'astro-robots-txt';
+
 
 // https://astro.build/config
 import image from "@astrojs/image";
@@ -13,6 +15,7 @@ import image from "@astrojs/image";
 export default defineConfig({
   site: astropodConfig.site,
   integrations: [
+    robotsTxt(),
     mdx(),
     sitemap(),
     tailwind(),
