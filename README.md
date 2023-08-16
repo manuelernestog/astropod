@@ -58,6 +58,10 @@ The fact that Astropod comes configured by default with Decap does not mean that
 - [Astro](https://astro.build)
 - [Tailwind](https://tailwindcss.com/)
 - [DaisyUI](https://daisyui.com/)
+
+## Requirements. 
+
+- Node 16.16.0 or higher
 ## Commands
 
 All commands are run from the root of the project, from a terminal:
@@ -79,7 +83,8 @@ All commands are run from the root of the project, from a terminal:
 │   ├── components/         // UI components
 │   ├── content/  
 │   │   ├── episode/        // Podcast episodes folder
-│   ├── layouts/
+│   ├── layouts/            // UI Layouts
+│   ├── helpers/            // App helpers like static data or functions
 │   └── pages/
 │   │   ├── rss.xml.js/     // Feed RSS generation file
 ├── public/                 // Public folder dor media files
@@ -88,10 +93,6 @@ All commands are run from the root of the project, from a terminal:
 ├── astro.config.mjs        // Astro config file
 ├── decap.config.mjs        //Decap CMS config file
 ```
-
-
-
-
 
 ## Contributing
 
