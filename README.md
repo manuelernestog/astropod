@@ -91,7 +91,7 @@ All commands are run from the root of the project, from a terminal:
 │   ├── audio/              // Git LFS folder for audio storage
 ├── .astropod/              // Astropod config files folder
 ├── astro.config.mjs        // Astro config file
-├── decap.config.mjs        //Decap CMS config file
+├── decap.config.mjs        // Decap CMS config file
 ```
 
 ## Contributing
