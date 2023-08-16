@@ -1,9 +1,8 @@
 ---
 import EpisodeLayout from "../layouts/EpisodeLayout.astro";
 import astropodConfig from "../../.astropod/astropod.config.json";
-import { Content as AboutContent } from "../content/web/about.md";
 ---
 
 <EpisodeLayout title="About" description={astropodConfig.description} cover={astropodConfig.cover}>
-  <AboutContent />
+  {astropodConfig.description}
 </EpisodeLayout>
