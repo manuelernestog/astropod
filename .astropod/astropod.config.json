@@ -14,10 +14,7 @@
   "language": "en",
   "link": "https://getastropod.netlify.app",
   "email": "contact.manuelernestog@gmail.com",
-  "description": "Astropod is a free and Open Source serverless podcast to host your podcast for free using any vendor.",
-  "category": [
-    "Technology",
-    "Business"
-  ],
+  "description": "Astropod is a free and open-source self-hosting serverless podcast solution. It supports diverse deployment services and audio hosting options and includes a customizable website deployable in a few clicks, with a personalized domain and a user-friendly CMS for effortless podcast management.",
+  "category": ["Technology", "Business"],
   "feedSize": ""
 }
