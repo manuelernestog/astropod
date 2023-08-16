@@ -1,8 +1,3 @@
 [build]
   publish = "dist/"
   command = "pnpm run build"
-
-[[headers]]
-  for = "/admin/*"
-  [headers.values]
-    X-Robots-Tag = "noindex"
