@@ -23,14 +23,14 @@ export async function get(context) {
       },
       channel: [
         {
-          title: cdata(astropodConfig.name),
-          description: cdata(astropodConfig.description),
+          title: astropodConfig.name,
+          description: astropodConfig.description,
           link: astropodConfig.link,
-          copyright: cdata(astropodConfig.copyright),
-          author: cdata(astropodConfig.author),
+          copyright: astropodConfig.copyright,
+          author: astropodConfig.author,
           generator: ["Astropod"],
           lastBuildDate: lastBuildDate,
-          language: cdata(astropodConfig.language),
+          language: astropodConfig.language,
           "itunes:author": astropodConfig.author,
           "itunes:image": { $: { href: cover } },
           "itunes:summary": astropodConfig.description,
@@ -42,7 +42,7 @@ export async function get(context) {
           },
           image: {
             link: astropodConfig.link,
-            title: cdata(astropodConfig.name),
+            title: astropodConfig.name,
             url: cover,
           },
           "atom:link": [
@@ -91,8 +91,8 @@ export async function get(context) {
 
   const items = episode.map((episode) => {
     let item = {
-      title: cdata(episode.data.title),
-      description: cdata(marked.parse(episode.body)),
+      title: episode.data.title,
+      description: marked.parse(episode.body),
       pubDate: dayjs(episode.data.pubDate).format("ddd, DD MMM YYYY hh:mm:ss ZZ"),
       link: `${astropodConfig.link}/episode/${episode.slug}/`,
       guid: `${astropodConfig.link}/episode/${episode.slug}/`,
@@ -118,16 +118,12 @@ export async function get(context) {
 
   podcast.rss.channel[0].item = items;
 
-  let builder = new xml2js.Builder();
+  let builder = new xml2js.Builder({cdata: true});
   let xml = builder.buildObject(podcast);
 
   return {
     body: xml,
   };
-}
-
-function cdata(value) {
-  return `<![CDATA[ ${value} ]]>`;
 }
 
 function isFullUrl(urlString) {
