@@ -9,6 +9,8 @@ export interface Props {
 
 import astropodConfig from "../../.astropod/astropod.config.json";
 const { title, description, image } = Astro.props;
+
+const display_image = image ? image : astropodConfig.cover;
 ---
 
 <!-- Global Metadata -->
@@ -27,11 +29,11 @@ const { title, description, image } = Astro.props;
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:image" content={new URL(display_image, Astro.url)} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta property="twitter:image" content={new URL(display_image, Astro.url)} />
