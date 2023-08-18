@@ -8,7 +8,7 @@ export default function dcapconfig() {
     logo_url: "/cmsBanner.svg",
     backend: {
       name: "git-gateway",
-      branch: "main",
+      branch: "getastropod",
     },
     collections: [
       {
