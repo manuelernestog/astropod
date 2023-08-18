@@ -28,7 +28,7 @@ const { page } = Astro.props;
         <HorizontalCard
           title={episode.data.title}
           cover={episode.data.cover}
-          desc={marked.parse(episode.body.slice(0, 200), { renderer: renderer })}
+          desc={marked.parse(episode.body.slice(0, 500), { renderer: renderer })}
           url={"/episode/" + episode.slug}
           audioUrl={episode.data.audioUrl}
           pubDate={episode.data.pubDate}
