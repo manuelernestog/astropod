@@ -127,7 +127,7 @@ export async function get(context) {
 }
 
 function cdata(value) {
-  return `<![CDATA[${value}]]>`;
+  return `<![CDATA[ ${value} ]]>`;
 }
 
 function isFullUrl(urlString) {
