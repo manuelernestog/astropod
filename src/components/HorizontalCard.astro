@@ -14,7 +14,7 @@ const displayDate = dayjs(pubDate).format("ll");
 function formatTime(seconds) {
   if (isNaN(seconds) || seconds < 0) {
     const segmentedTime = seconds.split(":");
-    return segmentedTime[0] == "00" ? seconds : null;
+    return segmentedTime[0] == "00" || segmentedTime[0] == "0" ? seconds : null;
   }
 
   const hours = Math.floor(seconds / 3600);
