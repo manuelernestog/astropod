@@ -26,14 +26,14 @@ const display_image = image ? image : astropodConfig.cover;
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content={Astro.url} />
+<meta property="og:url" content={astropodConfig.link} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(display_image, Astro.url)} />
+<meta property="og:image" content={new URL(display_image, astropodConfig.link)} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:url" content={astropodConfig.link} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(display_image, Astro.url)} />
+<meta property="twitter:image" content={new URL(display_image, astropodConfig.link)} />
