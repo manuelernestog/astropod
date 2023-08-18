@@ -129,6 +129,7 @@ export default function dcapconfig() {
               { name: "twitter", widget: "string", label: "Twitter", required: false },
               { name: "youtube", widget: "string", label: "YouTube", required: false },
               { name: "instagram", widget: "string", label: "Instagram", required: false },
+              { name: "github", widget: "string", label: "Github", required: false },
               { name: "telegram", widget: "string", label: "Telegram", required: false },
               { name: "linkedin", widget: "string", label: "LinkedIn", required: false },
               { name: "newsletter", widget: "string", label: "Newsletter", required: false },

@@ -7,6 +7,7 @@ import FacebookIcon from "../icons/facebookIcon.astro";
 import InstagramIcon from "../icons/instagramIcon.astro";
 import NewsletterIcon from "../icons/newsletterIcon.astro";
 import LinkedinIcon from "../icons/linkedinIcon.astro";
+import GithubIcon from "../icons/githubIcon.astro";
 
 
 import ExternalLinkIcon from "../icons/externalLinkIcon.astro";
@@ -31,6 +32,7 @@ for (const key in social) {
     {social.facebook && (<li><a href={social.facebook}><FacebookIcon />Facebook</a></li>)}
     {social.twitter && (<li><a href={social.twitter}><TwitterIcon />Twitter</a></li>)}
     {social.youtube && (<li><a href={social.youtube}><YoutubeIcon />Youtube</a></li>)}
+    {social.github && (<li><a href={social.github}><GithubIcon />Github</a></li>)}
     {social.telegram && (<li><a href={social.telegram}><TelegramIcon />Telegram</a></li>)}
     {social.linkedin && (<li><a href={social.linkedin}><LinkedinIcon />Linkedin</a></li>)}
     {social.newsletter && (<li><a href={social.newsletter}><NewsletterIcon />Newsletter</a></li>)}
