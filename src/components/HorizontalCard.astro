@@ -12,7 +12,10 @@ let cover_url = cover ? cover : astropodConfig.cover;
 const displayDate = dayjs(pubDate).format("ll");
 
 function formatTime(seconds) {
-  if (isNaN(seconds) || seconds < 0) return null;
+
+  if (isNaN(seconds) || seconds < 0) {
+    return null;
+  } 
 
   const hours = Math.floor(seconds / 3600);
   const minutes = Math.floor((seconds % 3600) / 60);

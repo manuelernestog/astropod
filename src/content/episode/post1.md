@@ -1,9 +1,9 @@
 ---
-title: Episode Demo
-audioUrl: https://archive.org/download/karbonaized-genera-capturas-de-tu-codigo/Karbonaized%20-%20Genera%20capturas%20de%20tu%20Codigo.ogg
+title: Demo Episode
+audioUrl: https://archive.org/download/astropod/1%20-%20Trailer%20with%20BG%20%28enhanced%29.mp3
 pubDate: Sep 10 2022
-duration: 10:00
-size: 25.4
+duration: 00:32
+size: 0.7
 cover: ""
 explicit: false
 episode: 1
