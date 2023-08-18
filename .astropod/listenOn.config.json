@@ -1,11 +1,11 @@
 {
-  "spotify": "",
-  "googlePodcast": "",
-  "applePodcast": "",
-  "easyPodcast": "",
   "amazonMusic": "",
-  "fountain": "",
+  "easyPodcast": "https://easypodcasts.live/834-astropod-free-serverless-podcast",
+  "deezer": "",
+  "applePodcast": "",
   "ivoox": "",
-  "pocketcasts": "",
-  "deezer": ""
+  "googlePodcast": "",
+  "fountain": "",
+  "spotify": "",
+  "pocketcasts": ""
 }
