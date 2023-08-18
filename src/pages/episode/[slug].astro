@@ -24,7 +24,7 @@ const episode: episodeSchema = entry.data;
 const { Content } = await entry.render();
 
 const renderer = new PlainTextRenderer();
-const description = marked.parse(entry.body.slice(0, 200), { renderer: renderer });
+const description = marked.parse(entry.body.slice(0, 500), { renderer: renderer }).slice(0, 200);
 ---
 
 <EpisodeLayout
