@@ -13,6 +13,7 @@ You can deploy Astropod in the deployment platform that you prefer, but for this
 
 Mentioned links:
 
-[Netlify](https://netlify.com) 
-[GitHub](https://github.com/) 
-[Deploy Astropod on Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/manuelernestog/astropod)
+- [Netlify](https://netlify.com) 
+- [GitHub](https://github.com/) 
+- [Astropod Repository](https://github.com/manuelernestog/astropod)
+- [Deploy Astropod on Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/manuelernestog/astropod)
