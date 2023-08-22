@@ -79,10 +79,13 @@ import AudioMutedIcon from "./icons/audioMutedIcon.astro";
   const seekSlider = document.getElementById("seek-slider");
 
   const calculateTime = (secs) => {
-    const minutes = Math.floor(secs / 60);
+    const hours = Math.floor(secs / 3600);
+    const minutes = Math.floor((secs % 3600) / 60);
     const seconds = Math.floor(secs % 60);
-    const returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
-    return `${minutes}:${returnedSeconds}`;
+    const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+    const formattedseconds = seconds < 10 ? `0${seconds}` : seconds;
+
+    return hours > 0 ? `${hours}:${formattedMinutes}:${formattedseconds}` : `${minutes}:${formattedseconds}`;
   };
 
   const displayDuration = () => {
