@@ -71,6 +71,7 @@ import AudioMutedIcon from "./icons/audioMutedIcon.astro";
   const audioLoading = document.getElementById("audio-loading");
   const audioDownloadLink = document.getElementById("audio-download-link");
   const musicPlayer = document.getElementById("audio-player-container");
+  const footer = document.querySelector(".footer");
 
   const audio = document.querySelector("audio");
   const durationContainer = document.getElementById("duration");
@@ -133,6 +134,7 @@ import AudioMutedIcon from "./icons/audioMutedIcon.astro";
       if (!audio.src.includes(btn.dataset.audioUrl)) {
         musicPlayer?.classList.remove("hidden");
         musicPlayer?.classList.add("flex");
+        footer?.classList.add('pb-24');
         setTimeout(() => musicPlayer?.classList.remove("opacity-0"), 100);
         audioLoading?.classList.remove("hidden");
         audioControl?.classList.add("hidden");
