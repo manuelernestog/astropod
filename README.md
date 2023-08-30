@@ -1,4 +1,4 @@
-<h1 align="center">Astropod | Free and Open Source Serverless Podcast</h1>
+# Astropod | Free and Open Source Serverless Podcast
 
 ![Atropod](https://github.com/manuelernestog/manuelernestog/assets/53962116/3106bf65-37f9-427f-9b50-72d7ae22752f)
 
@@ -10,8 +10,7 @@ Astropod is a free and open-source self-hosting serverless podcast solution. It 
 
 View a live demo and a tutorial step by step of how deploy and configure your podcast with Astropod.
 
-👉️ https://getastropod.netlify.app/
-
+👉️ <https://getastropod.netlify.app>
 
 ---
 
@@ -39,9 +38,9 @@ Astropod is designed to work with any file storage solution.
 
 You can host your podcast files in your own code base inside the folder `public/audio` and this will automatically work with [git LFS](https://git-lfs.com/) but free plans in GitHub and GitLab for LFS are limited so take that in mind.
 
-You can also host your podcast files in any other cloud storage solution like DropBox, Google Drive, Cloudinary or on your own server. Once you upload your audio file you just need to copy the public URL of the audio file into your episode `AudioUrl` field. 
+You can also host your podcast files in any other cloud storage solution like DropBox, Google Drive, Cloudinary or on your own server. Once you upload your audio file you just need to copy the public URL of the audio file into your episode `AudioUrl` field.
 
-For free unlimited cloud file storage we recommend use [Internet Archive ](https://archive.org/).
+For free unlimited cloud file storage we recommend use [Internet Archive](https://archive.org/).
 
 ## Content Management System
 
@@ -49,7 +48,7 @@ Astropod is designed in such a way that you can use it directly from the source 
 
 In order to manage podcast in a simpler way, astropod is configured by default with the CMS Serverless [Decap](https://decapcms.org/) which allows collaborative work, authentication with email or other providers and simple management.
 
-For the easiest use of Decap we recommend deploying Astropod on Netlify since the authentication system is integrated into the platform and is configured natively. If you would like to facilitate your own OAuth authentication rather than use Netlify's service or a client side flow like implicit or PKCE, you can use one of this [community-maintained projects ](https://decapcms.org/docs/external-oauth-clients/).
+For the easiest use of Decap we recommend deploying Astropod on Netlify since the authentication system is integrated into the platform and is configured natively. If you would like to facilitate your own OAuth authentication rather than use Netlify's service or a client side flow like implicit or PKCE, you can use one of this [community-maintained projects](https://decapcms.org/docs/external-oauth-clients/).
 
 The fact that Astropod comes configured by default with Decap does not mean that it is the only CMS with which it can work, if you prefer to use another CMS like Sanity, Wordpress, Strapi, Tina, or any other you can follow [Astro's integration guides](https://docs.astro.build/en/guides/cms/) to your integrate your favorite CMS.
 
@@ -59,9 +58,10 @@ The fact that Astropod comes configured by default with Decap does not mean that
 - [Tailwind](https://tailwindcss.com/)
 - [DaisyUI](https://daisyui.com/)
 
-## Requirements. 
+## Requirements
 
 - Node 16.16.0 or higher
+
 ## Commands
 
 All commands are run from the root of the project, from a terminal:
@@ -75,10 +75,9 @@ All commands are run from the root of the project, from a terminal:
 
 > These commands are using [`pnpm`][pnpm], but you can choose to use `npm` or `yarn` instead if you prefer.
 
-
 ## Project Structure
 
-```php
+```txt
 ├── src/
 │   ├── components/         // UI components
 │   ├── content/  
@@ -108,15 +107,11 @@ Astropod is licensed under the MIT license — see the [LICENSE](https://github.
 
 ## Contributors
 
-<a href="https://github.com/manuelernestog/astropod/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=manuelernestog/astropod" />
-</a>
+[![Manuel Ernestog](https://contrib.rocks/image?repo=manuelernestog/astropod)](https://github.com/manuelernestog/astropod/graphs/contributors)
 
 Made with [contrib.rocks](https://contrib.rocks).
 
-[integration]: https://github.com/delucis/astro-netlify-cms
 [deploy]: https://app.netlify.com/start/deploy?repository=https://github.com/manuelernestog/astropod
 [identity]: https://docs.netlify.com/visitor-access/identity/
 [gateway]: https://docs.netlify.com/visitor-access/git-gateway/
 [pnpm]: https://pnpm.io/
-
