@@ -56,11 +56,31 @@ const displayDuration = formatTime(duration);
       </div>
     </label>
   </div>
-  <hr class="my-3 border-base-content opacity-[.15]" />
 </div>
 
 <style>
-  .episode-card:last-child hr {
-    display: none;
+  .episode-card:last-child {
+    border-bottom: 0;
   }
+
+
+  .episode-card {
+  --c: black; /* the color */
+
+  color: #0000;
+  background: 
+    linear-gradient(90deg, #fff 50%, var(--c) 0) calc(100% - var(--_p, 0%)) / 200%, 
+    linear-gradient(var(--c) 0 0) 0% 100% / var(--_p, 0%) no-repeat,
+    var(--_c, #0000);
+  -webkit-background-clip: text, padding-box, padding-box;
+          background-clip: text, padding-box, padding-box;
+  transition: 0s, color .5s, background-color .5s;
+  border-bottom: 1px solid #eee;
+}
+.episode-card:hover {
+  color: #fff;
+  --_c: var(--c);
+  --_p: 100%;
+  transition: 0.5s, color 0s .5s, background-color 0s .5s;
+}
 </style>

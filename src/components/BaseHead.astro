@@ -37,3 +37,10 @@ const display_image = image ? image : astropodConfig.cover;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(display_image, astropodConfig.link)} />
+
+<style>
+  body{
+    background-image: url('../bg.png') !important;
+    background-size: contain !important;
+  }
+</style>

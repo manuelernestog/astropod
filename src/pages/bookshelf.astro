@@ -1,0 +1,66 @@
+---
+import EpisodeLayout from "../layouts/EpisodeLayout.astro";
+import astropodConfig from "../../.astropod/astropod.config.json";
+
+const books = [
+    {
+        title: "Breath: The New Science of a Lost Art by James Nester",
+        image: "./books/breathe.jpg",
+        url: "https://amzn.to/3YZvnOk"
+    },
+    {
+        title: "Quiet: The Power of Introverts in a World That Can't Stop Talking by Susan Cain",
+        image: "./books/quiet.jpg",
+        url: "https://amzn.to/3YXQQXO"
+    },
+    {
+        title: "Educated: A Memoir by Tara Westover",
+        image: "./books/educated.jpg",
+        url: "https://amzn.to/3YZe0wZ"
+    },
+    {
+        title: "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones by James Clear",
+        image: "./books/atomic.jpg",
+        url: "https://amzn.to/3Elwpe1"
+    },
+    {
+        title: "Engineering Management for the Rest of Us by Sarah Dresner",
+        image: "./books/management.jpg",
+        url: "https://amzn.to/45vtYSf"
+    },
+    {
+        title: "Full Catastrophe Living, Revised Edition: How to cope with stress, pain and illness using mindfulness meditation by Jon Kabat-Zinn",
+        image: "./books/catastrophe.jpg",
+        url: "https://amzn.to/3R39DyY"
+    },
+    {
+        title: "Nonviolent Communication -- A Language of Life: Life-Changing Tools for Healthy Relationships (Nonviolent Communication Guides) by Marshall B. Rosenberg",
+        image: "./books/nonviolent.jpg",
+        url: "https://amzn.to/3L6t326"
+    },
+    {
+        title: "Lean In: Women, Work, and the Will to Lead by Sheryl Sandberg",
+        image: "./books/leanin.jpg",
+        url: "https://amzn.to/3qSgIIf"
+    },
+    {
+        title: "Never Split the Difference: Negotiating as if Your Life Depended on It by Chris Voss and Tahl Raz",
+        image: "./books/neversplit.jpg",
+        url: "https://amzn.to/45Dzm5F"
+    }
+]
+
+---
+
+<EpisodeLayout hideSmallCover={true} title="Bookshelf" description={astropodConfig.description} cover="bookshelf.png">
+    Welcome to the TLD Bookshelf. In each episode we ask our guests to recommend a book and here they all are for you to purchase and read.
+    <div class="grid grid-cols-5 gap-2">
+        { 
+            books.map((book, index) => (
+                <a href={book.url} target="_blank">
+                    <img class="hover:-skew-x-1" src={book.image} alt={book.title} />
+                </a>    
+            ))
+        }
+    </div>
+</EpisodeLayout>

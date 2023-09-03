@@ -1,9 +1,9 @@
 {
-  "spotify": "",
-  "googlePodcast": "",
-  "applePodcast": "",
+  "spotify": "https://d8g345wuhgd7e.cloudfront.net/site/images/admin5/spotify.png",
+  "googlePodcast": "https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkLnBvZGJlYW4uY29tL3RlY2hsZWFkZXJzaGlwZGVjb2RlZC9mZWVkLnhtbA",
+  "applePodcast": "https://podcasts.apple.com/us/podcast/tech-leadership-decoded/id1684331982",
   "easyPodcast": "",
-  "amazonMusic": "",
+  "amazonMusic": "https://music.amazon.com/podcasts/db530f60-9206-419f-8150-e60771591db6",
   "fountain": "",
   "ivoox": "",
   "pocketcasts": "",
