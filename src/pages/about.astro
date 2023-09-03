@@ -3,6 +3,6 @@ import EpisodeLayout from "../layouts/EpisodeLayout.astro";
 import astropodConfig from "../../.astropod/astropod.config.json";
 ---
 
-<EpisodeLayout title="About" description={astropodConfig.description} cover="../guests/aaron.jpg">
+<EpisodeLayout title="About" description={astropodConfig.description} cover={astropodConfig.cover}>
   {astropodConfig.description}
 </EpisodeLayout>
