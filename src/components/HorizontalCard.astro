@@ -1,14 +1,16 @@
 ---
 const { title, cover, desc, url, audioUrl, id, pubDate, duration } = Astro.props;
 
-import astropodConfig from "../../.astropod/astropod.config.json";
+import {Image} from "astro:assets"
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 dayjs.extend(localizedFormat);
 import PlayIcon from "./icons/playIcon.astro";
 import PauseIcon from "./icons/pauseIcon.astro";
+import defaultCoverImage from "../assets/cover.jpg"
 
-let cover_url = cover ? cover : astropodConfig.cover;
+let cover_url = cover ? cover : defaultCoverImage;
+
 const displayDate = dayjs(pubDate).format("ll");
 
 function formatTime(secs) {
@@ -32,7 +34,7 @@ const displayDuration = formatTime(duration);
 <div class="episode-card">
   <div class="hero-content flex-row">
     <a href={url} class="min-w-fit">
-      <img src={cover_url} alt={title} class="shadow-lg rounded-md w-[4.5rem] h-[4.5rem] md:w-24 md:h-24" />
+      <Image src={cover_url} alt={title} class="shadow-lg rounded-md w-[4.5rem] h-[4.5rem] md:w-24 md:h-24" />
     </a>
     <div class="grow w-full overflow-auto">
       <a href={url}>
