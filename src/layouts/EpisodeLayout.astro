@@ -5,9 +5,8 @@ import localizedFormat from "dayjs/plugin/localizedFormat";
 import HeaderCard from "../components/headerCard/HeaderCard.astro";
 import astropodConfig from "../../.astropod/astropod.config.json";
 
-const { title, explicit, pubDate, cover, description } = Astro.props;
+const { title, explicit, cover, description } = Astro.props;
 dayjs.extend(localizedFormat);
-const displayDate = dayjs(pubDate).format("ll");
 ---
 
 <BaseLayout title={`${title} - ${astropodConfig.name}`} description={description} image={cover}>

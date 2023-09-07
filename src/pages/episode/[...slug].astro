@@ -1,11 +1,13 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
-import { episodeSchema } from "../../content/config";
+import { getCollection } from "astro:content";
+import type {CollectionEntry} from "astro:content";
+import type { episodeSchema } from "../../content/config";
 import EpisodeLayout from "../../layouts/EpisodeLayout.astro";
 import AudioPlayer from "../../components/audioPlayer.astro";
 import PlainTextRenderer from "marked-plaintext";
 import { marked } from "marked";
-import astropodConfig from "../../../.astropod/astropod.config.json";
+import { Image } from "astro:assets";
+import defaultCoverImage from "../../assets/cover.jpg"
 
 export async function getStaticPaths() {
   const postEntries = await getCollection("episode");
@@ -35,6 +37,7 @@ const description = marked.parse(entry.body.slice(0, 500), { renderer: renderer 
   description={description}
   cover={episode.cover}
 >
+  <Image src={defaultCoverImage} alt={episode.title} format="webp" class="shadow-lg rounded-md w-[4.5rem] h-[4.5rem] md:w-24 md:h-24" format="webp" transition:name="cover_img" width={defaultCoverImage.width} height={defaultCoverImage.height} />
   <Content />
 </EpisodeLayout>
 
