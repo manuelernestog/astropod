@@ -1,8 +1,12 @@
 ---
-import EpisodeLayout from "../layouts/EpisodeLayout.astro";
-import astropodConfig from "../../.astropod/astropod.config.json";
+import HeaderCard from "@components/headerCard/HeaderCard.astro";
+import astropodConfig from "@configs/astropod.config.json";
+import BaseLayout from "@layouts/BaseLayout.astro";
 ---
 
-<EpisodeLayout title="About" description={astropodConfig.description} cover={astropodConfig.cover}>
-  {astropodConfig.description}
-</EpisodeLayout>
+<BaseLayout title="About" description={astropodConfig.description} cover={astropodConfig.cover}>
+  <HeaderCard title={astropodConfig.name} subtitle={astropodConfig.author} />
+  <main class="w-full h-auto p-5 flex flex-col justify-center items-center">
+    {astropodConfig.description}
+  </main>
+</BaseLayout>

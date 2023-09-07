@@ -5,9 +5,9 @@ import {Image} from "astro:assets"
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 dayjs.extend(localizedFormat);
-import PlayIcon from "./icons/playIcon.astro";
-import PauseIcon from "./icons/pauseIcon.astro";
-import defaultCoverImage from "../assets/cover.jpg"
+import PlayIcon from "@icons/playIcon.astro";
+import PauseIcon from "@icons/pauseIcon.astro";
+import defaultCoverImage from "@assets/cover.jpg"
 
 let cover_url = cover ? cover : defaultCoverImage;
 

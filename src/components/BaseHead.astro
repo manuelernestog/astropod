@@ -8,7 +8,7 @@ export interface Props {
 }
 
 import { ViewTransitions } from "astro:transitions";
-import astropodConfig from "../../.astropod/astropod.config.json";
+import astropodConfig from "@configs/astropod.config.json";
 const { title, description, image } = Astro.props;
 
 const display_image = image ? image : astropodConfig.cover;

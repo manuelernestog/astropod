@@ -1,9 +1,9 @@
 ---
-import BaseLayout from "./BaseLayout.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
-import HeaderCard from "../components/headerCard/HeaderCard.astro";
-import astropodConfig from "../../.astropod/astropod.config.json";
+import HeaderCard from "@components/headerCard/HeaderCard.astro";
+import astropodConfig from "@configs/astropod.config.json";
 
 const { title, explicit, cover, description } = Astro.props;
 dayjs.extend(localizedFormat);
