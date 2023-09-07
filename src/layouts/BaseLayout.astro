@@ -1,9 +1,7 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Footer from "../components/Footer.astro";
-import astropodConfig from "../../.astropod/astropod.config.json";
-
-import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import BaseHead from "@components/BaseHead.astro";
+import Footer from "@components/Footer.astro";
+import astropodConfig from "@configs/astropod.config.json";
 
 const { image, title = astropodConfig.name, description = astropodConfig.description } = Astro.props;
 ---
@@ -14,7 +12,7 @@ const { image, title = astropodConfig.name, description = astropodConfig.descrip
     <BaseHead title={title} description={description} image={image} />
   </head>
   <body class="bg-base-200 min-h-screen">
-    <div class="container mx-auto lg:max-w-[960px]">
+    <div class="container mx-auto lg:max-w-[960px] flex flex-col items-center justify-between">
       <div class="md:flex md:justify-center w-full">
         <main class="-mt-5 w-full">
           <slot />

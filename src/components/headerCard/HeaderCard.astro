@@ -1,20 +1,22 @@
 ---
-import astropodConfig from "../../../.astropod/astropod.config.json";
+import astropodConfig from "@configs/astropod.config.json";
 const { title, subtitle, explicit, cover } = Astro.props;
-
-import ListenOnMenu from "./listenOnMenu.astro";
-import FollowUsMenu from "./followUsMenu.astro";
-import RssIcon from "../icons/rssIcon.astro";
-import HeartIcon from "../icons/heartIcon.astro";
+import {Image} from "astro:assets"
+import ListenOnMenu from "@components/headerCard/listenOnMenu.astro";
+import FollowUsMenu from "@components/headerCard/followUsMenu.astro";
+import RssIcon from "@icons/rssIcon.astro";
+import HeartIcon from "@icons/heartIcon.astro";
+import defaultCoverImage from "@assets/cover.jpg"
+import bannerImage from "@assets/banner.webp"
 
 const explicitLabel = explicit === undefined ? astropodConfig.explicit : explicit;
-let cover_url = cover ? cover : astropodConfig.cover;
+let cover_url = cover ? cover : defaultCoverImage;
 ---
 
 <div class="card min-w-full bg-base-100 shadow-md md:pb-3 w-full">
   <div class="aspect-[3/1] mt-5 w-full">
     <div class="relative inline-block w-full">
-      <img src={astropodConfig.banner} alt={astropodConfig.name + " banner"} class="object-cover w-full aspect-[3/1]" />
+      <Image src={bannerImage} alt={astropodConfig.name + " banner"} class="object-cover w-full aspect-[3/1]" /fetchpriority="high" width={bannerImage.width} height={bannerImage.height}>
       <div
         class="absolute top-0 left-0 items-center justify-center w-full h-full bg-gradient-to-t from-gray-900 to-50% to-transparent"
       >
@@ -31,11 +33,7 @@ let cover_url = cover ? cover : astropodConfig.cover;
         )
       }
     </div>
-    <img
-      alt={astropodConfig.name + "cover"}
-      class="-mt-28 mx-6 md:-mt-28 border-4 z-10 relative border-base-100 rounded-lg md:mx-11 w-24 h-24 md:h-40 md:w-40"
-      src={cover_url}
-    />
+    <Image src={cover_url} alt={astropodConfig.name + "cover"} class="-mt-28 mx-6 md:-mt-28 border-4 z-10 relative border-base-100 rounded-lg md:mx-11 w-24 h-24 md:h-40 md:w-40" format="webp" width={96} height={96}/>
   </div>
 
   <div class="flex md:-mt-12 px-4 md:pl-52">

@@ -7,7 +7,8 @@ export interface Props {
   image?: string;
 }
 
-import astropodConfig from "../../.astropod/astropod.config.json";
+import { ViewTransitions } from "astro:transitions";
+import astropodConfig from "@configs/astropod.config.json";
 const { title, description, image } = Astro.props;
 
 const display_image = image ? image : astropodConfig.cover;
@@ -37,3 +38,5 @@ const display_image = image ? image : astropodConfig.cover;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(display_image, astropodConfig.link)} />
+
+<ViewTransitions />
