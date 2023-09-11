@@ -4,7 +4,7 @@ audioUrl: https://mcdn.podbean.com/mf/web/84747k/1.mp3
 pubDate: Apr 22 2023
 duration: 01:03
 size: 0.7
-cover: "../guests/aaron.png"
+cover: "/guests/aaron.png"
 explicit: false
 episode: 1
 season: 1

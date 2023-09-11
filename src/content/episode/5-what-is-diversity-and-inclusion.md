@@ -4,7 +4,7 @@ audioUrl: https://mcdn.podbean.com/mf/web/5pne22/Sade_Turner_Moise_-6n7qg.mp3
 pubDate: Jul 24 2023
 duration: 45:55
 size: 0.7
-cover: "../guests/sade.png"
+cover: "/guests/sade.png"
 explicit: false
 episode: 6
 season: 1

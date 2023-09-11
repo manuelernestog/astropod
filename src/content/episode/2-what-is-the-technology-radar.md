@@ -4,7 +4,7 @@ audioUrl: https://mcdn.podbean.com/mf/web/kqana3/episode-3-marisa-hoenig.mp3
 pubDate: May 24 2023
 duration: 39:24
 size: 0.7
-cover: "../guests/marisa.png"
+cover: "/guests/marisa.png"
 explicit: false
 episode: 3
 season: 1

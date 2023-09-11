@@ -4,7 +4,7 @@ audioUrl: https://mcdn.podbean.com/mf/web/899ir2/5-.mp3
 pubDate: Jun 30 2023
 duration: 46:37
 size: 0.7
-cover: "../guests/spencer.png"
+cover: "/guests/spencer.png"
 explicit: false
 episode: 5
 season: 1

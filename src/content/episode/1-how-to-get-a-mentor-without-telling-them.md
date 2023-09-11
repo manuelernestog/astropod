@@ -4,7 +4,7 @@ audioUrl: https://mcdn.podbean.com/mf/web/wec395/2.mp3
 pubDate: May 15 2023
 duration: 39:24
 size: 0.7
-cover: "../guests/erin-fox.png"
+cover: "/guests/erin-fox.png"
 explicit: false
 episode: 2
 season: 1

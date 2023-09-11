@@ -4,7 +4,7 @@ audioUrl: https://mcdn.podbean.com/mf/web/ijebe8/KBall-.mp3
 pubDate: Jun 09 2023
 duration: 44:33
 size: 0.7
-cover: "../guests/kevin.png"
+cover: "/guests/kevin.png"
 explicit: false
 episode: 4
 season: 1
