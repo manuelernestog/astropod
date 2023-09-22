@@ -1,8 +1,8 @@
 ---
 title: 6 - How do you build a tech team? (Alfie Whattam)
-audioUrl: https://mcdn.podbean.com/mf/web/5pne22/Sade_Turner_Moise_-6n7qg.mp3
-pubDate: Sep 11 2023
-duration: 45:55
+audioUrl: https://mcdn.podbean.com/mf/web/famceh/alfie-whatta.mp3
+pubDate: Sep 21 2023
+duration: 44:22
 size: 0.7
 cover: "/guests/alfie.png"
 explicit: false
