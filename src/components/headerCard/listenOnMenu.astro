@@ -10,6 +10,7 @@ import AmazonMusicIcon from "../icons/amazonMusicIcon.astro";
 import FountainIcon from "../icons/fountainIcon.astro";
 import DeezerIcon from "../icons/deezerIcon.astro";
 import EasyPodcastIcon from "../icons/easyPodcastIcon.astro";
+import AcastPodcastsIcon from "../icons/acastPodcastsIcon.astro";
 
 let hasListenOn = false 
 
@@ -37,6 +38,7 @@ for (const key in listenOn) {
       {listenOn.pocketcasts && (<li><a href={listenOn.pocketcasts}><PocketcastsIcon />Pocketcasts</a></li>)}
       {listenOn.fountain && (<li><a href={listenOn.fountain}><FountainIcon />Fountain</a></li>)}
       {listenOn.deezer && (<li><a href={listenOn.deezer}><DeezerIcon />Deezer</a></li>)}
+      {listenOn.acastPodcasts && (<li><a href={listenOn.acastPodcasts}><AcastPodcastsIcon />Acast Podcasts</a></li>)}
     </ul>
   </div>
 )}
