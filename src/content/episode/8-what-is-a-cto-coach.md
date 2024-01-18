@@ -1,5 +1,5 @@
 ---
-title: 8 - What is a CTO Coach?
+title: S1E08 - What is a CTO Coach?
 audioUrl: https://mcdn.podbean.com/mf/web/88t596/andy-skipper-.mp3
 pubDate: Oct 24 2023
 duration: 33:48

@@ -1,5 +1,5 @@
 ---
-title: 9 - How do i work on my personal growth as a leader?
+title: S1E09 - How do i work on my personal growth as a leader?
 audioUrl: https://mcdn.podbean.com/mf/web/rwci7g/10-steve-dwire-.mp3
 pubDate: Dec 7 2023
 duration: 40:46

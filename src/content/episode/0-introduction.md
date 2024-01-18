@@ -1,5 +1,5 @@
 ---
-title: 0 - Introduction to the podcast
+title: S1E00 - Introduction to the podcast
 audioUrl: https://mcdn.podbean.com/mf/web/84747k/1.mp3
 pubDate: Apr 22 2023
 duration: 01:03

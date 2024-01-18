@@ -1,5 +1,5 @@
 ---
-title: 6 - How do you build a tech team? (Alfie Whattam)
+title: S1E06 - How do you build a tech team? (Alfie Whattam)
 audioUrl: https://mcdn.podbean.com/mf/web/famceh/alfie-whatta.mp3
 pubDate: Sep 21 2023
 duration: 44:22

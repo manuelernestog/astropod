@@ -1,5 +1,5 @@
 ---
-title: 3 -  What does growth-focused management look like? (Kevin Ball)
+title: S1E03 -  What does growth-focused management look like? (Kevin Ball)
 audioUrl: https://mcdn.podbean.com/mf/web/ijebe8/KBall-.mp3
 pubDate: Jun 09 2023
 duration: 44:33

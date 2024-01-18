@@ -1,5 +1,5 @@
 ---
-title: 1 - How to get a mentor without telling them (Erin Fox)
+title: S1E01 - How to get a mentor without telling them (Erin Fox)
 audioUrl: https://mcdn.podbean.com/mf/web/wec395/2.mp3
 pubDate: May 15 2023
 duration: 39:24

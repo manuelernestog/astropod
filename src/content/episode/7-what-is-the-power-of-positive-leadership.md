@@ -1,5 +1,5 @@
 ---
-title: 7 - What is the power of positive leadership? (Julie Nee)
+title: S1E07 - What is the power of positive leadership? (Julie Nee)
 audioUrl: https://mcdn.podbean.com/mf/web/heufuq/julie-nee.mp3
 pubDate: Sep 26 2023
 duration: 42:13

@@ -1,5 +1,5 @@
 ---
-title: 5 - What is Diversity & Inclusion? (Sade Turner-Moise)
+title: S1E05 - What is Diversity & Inclusion? (Sade Turner-Moise)
 audioUrl: https://mcdn.podbean.com/mf/web/5pne22/Sade_Turner_Moise_-6n7qg.mp3
 pubDate: Jul 24 2023
 duration: 45:55

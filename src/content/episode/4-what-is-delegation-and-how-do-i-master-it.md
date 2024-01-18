@@ -1,5 +1,5 @@
 ---
-title: 4 - What Is Delegation & How Do I Master It? (Spencer Norman)
+title: S1E04 - What Is Delegation & How Do I Master It? (Spencer Norman)
 audioUrl: https://mcdn.podbean.com/mf/web/899ir2/5-.mp3
 pubDate: Jun 30 2023
 duration: 46:37

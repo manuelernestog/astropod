@@ -6,7 +6,6 @@ import astropodConfig from "../../.astropod/astropod.config.json";
 import HeaderCard from "../components/headerCard/HeaderCard.astro";
 import AudioPlayer from "../components/audioPlayer.astro";
 import PlainTextRenderer from "marked-plaintext";
-import { marked } from "marked";
 import Pagination from "../components/pagination.astro";
 
 const renderer = new PlainTextRenderer();
@@ -34,6 +33,7 @@ const { page } = Astro.props;
           pubDate={episode.data.pubDate}
           duration={episode.data.duration}
           id={"card-" + index}
+          season={episode.data.season}
         />
       ))
     }

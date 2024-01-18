@@ -1,5 +1,5 @@
 ---
-title: 2 - What is the technology radar? (Marisa Hoenig)
+title: S1E02 - What is the technology radar? (Marisa Hoenig)
 audioUrl: https://mcdn.podbean.com/mf/web/kqana3/episode-3-marisa-hoenig.mp3
 pubDate: May 24 2023
 duration: 39:24
