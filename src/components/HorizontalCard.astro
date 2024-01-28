@@ -26,7 +26,7 @@ function formatTime(secs) {
   return hours > 0 ? `${hours}:${formattedMinutes}:${formattedseconds}` : `${minutes}:${formattedseconds}`;
 }
 
-const displayDuration = formatTime(duration);
+const displayDuration = duration ? formatTime(duration) : 0;
 ---
 
 <div class="episode-card">
@@ -46,7 +46,8 @@ const displayDuration = formatTime(duration);
         <p class="my-1 text-xs md:text-sm line-clamp-2">{desc}</p>
       </a>
     </div>
-    <label class="btn btn-circle md:mx-2 swap">
+    {audioUrl && (
+ <label class="btn btn-circle md:mx-2 swap">
       <input type="checkbox" class="card-pay-buttons" id={id} data-audio-url={audioUrl} aria-label="Play and pause" />
       <div class="swap-off">
         <PlayIcon />
@@ -55,6 +56,8 @@ const displayDuration = formatTime(duration);
         <PauseIcon />
       </div>
     </label>
+    )}
+   
   </div>
 </div>
 

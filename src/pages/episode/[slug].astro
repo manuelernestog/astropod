@@ -41,18 +41,18 @@ const description = marked.parse(entry.body.slice(0, 500), { renderer: renderer 
 <AudioPlayer />
 
 <script define:vars={{ episode }}>
-const musicPlayer = document.getElementById("audio-player-container");
-const audioDownloadLink = document.getElementById("audio-download-link");
-const audioControl = document.getElementById("audio-control");
-const audioLoading = document.getElementById("audio-loading");
-const footer = document.querySelector(".footer > div");
+  const musicPlayer = document.getElementById("audio-player-container");
+  const audioDownloadLink = document.getElementById("audio-download-link");
+  const audioControl = document.getElementById("audio-control");
+  const audioLoading = document.getElementById("audio-loading");
+  const footer = document.querySelector(".footer > div");
 
-musicPlayer?.classList.remove("hidden", "opacity-0");
-musicPlayer?.classList.add("flex");
-const audio = document.querySelector("audio");
-audio.src = episode.audioUrl;
-audioLoading?.classList.remove("hidden");
-audioControl?.classList.add("hidden");
-footer?.classList.add('pb-24');
-audioDownloadLink.href = episode.audioUrl;
+  musicPlayer?.classList.remove("hidden", "opacity-0");
+  musicPlayer?.classList.add("flex");
+  const audio = document.querySelector("audio");
+  audio.src = episode.audioUrl;
+  audioLoading?.classList.remove("hidden");
+  audioControl?.classList.add("hidden");
+  footer?.classList.add('pb-24');
+  audioDownloadLink.href = episode.audioUrl;
 </script>
